@@ -1,0 +1,17 @@
+BshdevBundle\Entity\Job:
+    type: entity
+    table: null
+    repositoryClass: BshdevBundle\Repository\JobRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        description:
+            type: text
+    lifecycleCallbacks: {  }

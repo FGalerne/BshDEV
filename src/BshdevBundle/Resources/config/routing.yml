@@ -2,6 +2,10 @@ bshdev_career:
     resource: "@BshdevBundle/Resources/config/routing/career.yml"
     prefix:   /career
 
+bshdev_job:
+    resource: "@BshdevBundle/Resources/config/routing/job.yml"
+    prefix:   /job
+
 bshdev_index:
     path:     /index
     defaults: { _controller: BshdevBundle:Default:index }
