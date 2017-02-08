@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default" role="navigation">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="{{ path('bshdev_home') }}">
+			<img src="{{ asset('bundles/bshdev/img/logo BSHDEV_final.png') }}" alt="BshDEV" class="img">
+		</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="{{ path('bshdev_home') }}">Acceuil</a></li>
+			<li><a href="#">A propos</a></li>
+			<li><a href="#">Savoir-faire</a></li>
+			<li><a href="#">Références</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Carriére <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Nos Offres</a></li>
+					<li><a href="#">Candidature spontanée</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Nous contacter</a></li>
+		</ul>
+
+	</div><!-- /.navbar-collapse -->
+</nav>

@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('BshdevBundle:Default:index.html.twig');
     }
+    public function homeAction()
+    {
+        return $this->render('BshdevBundle::homepage.html.twig');
+    }
+
 }

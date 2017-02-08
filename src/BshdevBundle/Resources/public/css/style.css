@@ -1,0 +1,55 @@
+.container-fluid{
+    padding: 0 0 0 0;
+
+}
+#page{
+    min-height: 79vh;
+}
+
+/*************** NAVBAR  ***************************/
+
+.navbar-header{
+    height: 120px;
+}
+
+.navbar-nav{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.navbar-default{
+    margin-bottom: 0;
+}
+
+/*******************FOOTER *****************************/
+footer{
+    margin-top: 20px;
+}
+
+.copyright{
+    text-align: center;
+    padding-top: 15px;
+}
+
+/***************HOMEPAGE*********************************/
+
+.experiences{
+    margin-top: 25px;
+}
+
+.purple{
+    background-color: rgba(158, 32, 100, 0.3);
+    min-height: 250px;
+}
+
+.title{
+    text-align: center;
+    font-size: 18px;
+}
+
+/*****************LOGIN***********************************/
+
+.button{
+    background-color: rgba(164, 168, 174, 1);
+    color: white;
+}
