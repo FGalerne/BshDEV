@@ -1,0 +1,33 @@
+BshdevBundle\Entity\Career:
+    type: entity
+    table: null
+    repositoryClass: BshdevBundle\Repository\CareerRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstname:
+            type: string
+            length: 255
+        lastname:
+            type: string
+            length: 255
+        address:
+            type: string
+            length: 255
+        cp:
+            type: string
+            length: 255
+        town:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        phone:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

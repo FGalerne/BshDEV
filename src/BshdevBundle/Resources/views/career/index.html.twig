@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Careers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Address</th>
+                <th>Cp</th>
+                <th>Town</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for career in careers %}
+            <tr>
+                <td><a href="{{ path('career_show', { 'id': career.id }) }}">{{ career.id }}</a></td>
+                <td>{{ career.firstname }}</td>
+                <td>{{ career.lastname }}</td>
+                <td>{{ career.address }}</td>
+                <td>{{ career.cp }}</td>
+                <td>{{ career.town }}</td>
+                <td>{{ career.email }}</td>
+                <td>{{ career.phone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('career_show', { 'id': career.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('career_edit', { 'id': career.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('career_new') }}">Create a new career</a>
+        </li>
+    </ul>
+{% endblock %}
