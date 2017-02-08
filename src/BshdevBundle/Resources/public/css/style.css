@@ -59,3 +59,12 @@ footer{
 .block-form{
     margin-top: 3%;
 }
+
+.border{
+    border: none;
+}
+
+.backGrey{
+    background-color: rgb(209,210,212);
+    margin-top: 2%;
+}
