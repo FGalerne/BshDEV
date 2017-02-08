@@ -1,12 +1,26 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'BshdevBundle:template:form.html.twig' %}
 
 {% block body %}
-    <h1>Career creation</h1>
+    <h1 class="title">Candidature spontanée</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
+<div class="row block-form">
+    <div class="col-xs-12 col-md-offset-4 col-md-4">
+        {{ form_start(form) }}
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.address) }}
+        {{ form_row(form.cp) }}
+        {{ form_row(form.town) }}
+        {{ form_row(form.phone) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.fileCv) }}
         <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        {{ form_end(form) }}
+
+    </div>
+</div>
+
 
     <ul>
         <li>

@@ -9,6 +9,51 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Career
 {
+    /******************************************UPLOAD************************************************************/
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../web/' . $this->getUploadDir();
+    }
+    public function getWebPath()
+    {
+        return null === $this->imageCv ? null : $this->getUploadDir() . '/' . $this->imageCv;
+    }
+    public function getAbsolutePath()
+    {
+        return null === $this->imageCv ? null : $this->getUploadRootDir() . '/' . $this->imageCv;
+    }
+    public $fileCv;
+    public function preUploadCv()
+    {
+        if (null !== $this->fileCv) {
+            // do whatever you want to generate a unique name
+            $this->imageCv = uniqid() . '.' . $this->fileCv->guessExtension();
+        }
+    }
+    public function uploadCv()
+    {
+        if (null === $this->fileCv) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->fileCv->move($this->getUploadRootDir(), $this->imageCv);
+        unset($this->fileCv);
+    }
+    public function removeUploadCv()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+
+    /************************************************GENERATE CODE*****************************************************/
     /**
      * @var int
      */

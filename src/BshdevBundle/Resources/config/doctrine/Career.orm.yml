@@ -30,4 +30,13 @@ BshdevBundle\Entity\Career:
         phone:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
+        imageCv:
+            type: string
+            lenght: 255
+
+    lifecycleCallbacks:
+      prePersist: [ preUploadCv ]
+      preUpdate: [ preUploadCv ]
+      postPersist: [ uploadCv ]
+      postUpdate: [ uploadCv ]
+      postRemove: [ removeUploadCv ]

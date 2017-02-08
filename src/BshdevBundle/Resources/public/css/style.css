@@ -53,3 +53,9 @@ footer{
     background-color: rgba(164, 168, 174, 1);
     color: white;
 }
+
+/****************FORM*************************************/
+
+.block-form{
+    margin-top: 3%;
+}

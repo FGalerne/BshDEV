@@ -13,7 +13,32 @@ class CareerType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstname')->add('lastname')->add('address')->add('cp')->add('town')->add('email')->add('phone')        ;
+        $builder
+            ->add('firstname', null, array(
+                'label' => 'Prénom'
+            ))
+            ->add('lastname', null, array(
+                'label' => 'Nom'
+            ))
+            ->add('address', null, array(
+                'label' => 'Adresse'
+            ))
+            ->add('cp', null, array(
+                'label' => 'Code postal'
+            ))
+            ->add('town', null, array(
+                'label' => 'Ville'
+            ))
+            ->add('email', null, array(
+                'label' => 'Email'
+            ))
+            ->add('phone', null, array(
+                'label' => 'Télèphone'
+            ))
+            ->add('fileCv', 'file', array('required' => false,
+                'label'=>'Déposez votre CV'
+            ))
+        ;
     }
     
     /**
