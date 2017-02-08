@@ -1,41 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Jobs list</h1>
+    <h1>Nos offres d'emploi</h1>
+    {% for job in jobs %}
+        <section class="row">
+            <div class="col-xs-12 col-md-offset-2 col-md-8 backWhite">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>{{ job.title }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ job.description }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-offset-5 col-xs-2">
+                <a href="{{ path('career_new') }}"><button type="submit" class="button">Je postule !!!</button></a>
+                    </div>
+            </div>
+        </section>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for job in jobs %}
-            <tr>
-                <td><a href="{{ path('job_show', { 'id': job.id }) }}">{{ job.id }}</a></td>
-                <td>{{ job.title }}</td>
-                <td>{{ job.description }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('job_show', { 'id': job.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('job_edit', { 'id': job.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('job_new') }}">Create a new job</a>
-        </li>
-    </ul>
+    {% endfor %}
 {% endblock %}

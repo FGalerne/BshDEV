@@ -4,7 +4,7 @@
     {% for career in careers %}
         <div class="row">
             <a href="{{ path('career_show', {'id': career.id}) }}">
-                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backGrey">
+                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite">
 
                     <div class="row ">
                         <table>
@@ -21,65 +21,15 @@
                                 <td class="col-xs-2">{{ career.address }} {{ career.cp }} {{ career.town }}</td>
                                 <td class="col-xs-3">{{ career.phone }}</td>
                                 <td class="col-xs-3">{{ career.email }}</td>
-                                {# <td class="col-xs-3">
-                                     <div class="col-xs-offset-11 col-xs-1">
-                                         <a href="{{ path('booster_deleteUser', {'id': user.id}) }}">
-                                             <i class="col-xs-offset-11 fa fa-times fa-3x" aria-hidden="true"></i>
-                                         </a>
-                                     </div>
-                                 </td>#}
                             </tr>
 
                         </table>
 
                     </div>
-
-
                 </section>
             </a>
         </div>
     {% endfor %}
-    {# <h1>Careers list</h1>
-
-     <table>
-         <thead>
-         <tr>
-             <th>Id</th>
-             <th>Firstname</th>
-             <th>Lastname</th>
-             <th>Address</th>
-             <th>Cp</th>
-             <th>Town</th>
-             <th>Email</th>
-             <th>Phone</th>
-             <th>Actions</th>
-         </tr>
-         </thead>
-         <tbody>
-
-         <tr>
-             <td><a href="{{ path('career_show', { 'id': career.id }) }}">{{ career.id }}</a></td>
-             <td>{{ career.firstname }}</td>
-             <td>{{ career.lastname }}</td>
-             <td>{{ career.address }}</td>
-             <td>{{ career.cp }}</td>
-             <td>{{ career.town }}</td>
-             <td>{{ career.email }}</td>
-             <td>{{ career.phone }}</td>
-             <td>
-                 <ul>
-                     <li>
-                         <a href="{{ path('career_show', { 'id': career.id }) }}">show</a>
-                     </li>
-                     <li>
-                         <a href="{{ path('career_edit', { 'id': career.id }) }}">edit</a>
-                     </li>
-                 </ul>
-             </td>
-         </tr>
-
-         </tbody>
-     </table>#}
 
     <ul>
         <li>
