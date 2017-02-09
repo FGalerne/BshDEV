@@ -39,8 +39,8 @@ class PersonController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($Person);
-            $em->flush($Person);
+            $em->persist($person);
+            $em->flush($person);
 
             return $this->redirectToRoute('person_show', array('id' => $person->getId()));
         }

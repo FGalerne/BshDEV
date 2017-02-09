@@ -34,6 +34,12 @@ BshdevBundle\Entity\Person:
             type: string
             lenght: 255
 
+
+    manyToOne:
+        job:
+            targetEntity: BshdevBundle\Entity\Job
+            inversedBy: id
+
     lifecycleCallbacks:
       prePersist: [ preUploadCv ]
       preUpdate: [ preUploadCv ]

@@ -293,4 +293,32 @@ class Person
     {
         return $this->imageCv;
     }
+    /**
+     * @var string
+     */
+    private $job;
+
+
+    /**
+     * Set job
+     *
+     * @param string $job
+     * @return Person
+     */
+    public function setJob($job)
+    {
+        $this->job = $job;
+
+        return $this;
+    }
+
+    /**
+     * Get job
+     *
+     * @return string 
+     */
+    public function getJob()
+    {
+        return $this->job;
+    }
 }

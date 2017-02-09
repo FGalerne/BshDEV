@@ -14,4 +14,10 @@ BshdevBundle\Entity\Job:
             length: 255
         description:
             type: text
+
+    oneToMany:
+        person:
+            targetEntity: BshdevBundle\Entity\Person
+            mappedBy: id
+
     lifecycleCallbacks: {  }
