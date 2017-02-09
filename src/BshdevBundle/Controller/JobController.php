@@ -27,6 +27,34 @@ class JobController extends Controller
         ));
     }
 
+    public function listAction()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $jobs = $em->getRepository('BshdevBundle:Job')->findAll();
+
+        return $this->render('BshdevBundle:job:list.html.twig', array(
+            'jobs' => $jobs,
+
+
+        ));
+    }
+
+    public function deleteAction(Request $request, Job $job)
+    {
+        /*$form = $this->createDeleteForm($job);*/
+       /* $form->handleRequest($request);*/
+
+        /*if ($form->isSubmitted() && $form->isValid()) {*/
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($job);
+            $em->flush($job);
+      /*  }*/
+
+        return $this->redirectToRoute('job_list');
+    }
+
     /**
      * Creates a new job entity.
      *
@@ -57,11 +85,11 @@ class JobController extends Controller
      */
     public function showAction(Job $job)
     {
-        $deleteForm = $this->createDeleteForm($job);
+        /*$deleteForm = $this->createDeleteForm($job);*/
 
         return $this->render('BshdevBundle:job:show.html.twig', array(
             'job' => $job,
-            'delete_form' => $deleteForm->createView(),
+            /*'delete_form' => $deleteForm->createView(),*/
         ));
     }
 
@@ -71,7 +99,7 @@ class JobController extends Controller
      */
     public function editAction(Request $request, Job $job)
     {
-        $deleteForm = $this->createDeleteForm($job);
+        /*$deleteForm = $this->createDeleteForm($job);*/
         $editForm = $this->createForm('BshdevBundle\Form\JobType', $job);
         $editForm->handleRequest($request);
 
@@ -84,7 +112,7 @@ class JobController extends Controller
         return $this->render('BshdevBundle:job:edit.html.twig', array(
             'job' => $job,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            /*'delete_form' => $deleteForm->createView(),*/
         ));
     }
 
@@ -92,7 +120,7 @@ class JobController extends Controller
      * Deletes a job entity.
      *
      */
-    public function deleteAction(Request $request, Job $job)
+   /* public function deleteAction(Request $request, Job $job)
     {
         $form = $this->createDeleteForm($job);
         $form->handleRequest($request);
@@ -104,7 +132,7 @@ class JobController extends Controller
         }
 
         return $this->redirectToRoute('job_index');
-    }
+    }*/
 
     /**
      * Creates a form to delete a job entity.
@@ -113,12 +141,12 @@ class JobController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Job $job)
+    /*private function createDeleteForm(Job $job)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('job_delete', array('id' => $job->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
-    }
+    }*/
 }

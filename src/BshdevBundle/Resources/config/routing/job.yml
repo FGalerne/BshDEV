@@ -21,4 +21,9 @@ job_edit:
 job_delete:
     path:     /{id}/delete
     defaults: { _controller: "BshdevBundle:Job:delete" }
-    methods:  DELETE
+    methods:  [GET, POST]
+
+job_list:
+    path:     /list
+    defaults: { _controller: "BshdevBundle:Job:list" }
+    methods:  GET

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Nos offres d'emploi</h1>
+    {% for job in jobs %}
+        <section class="row">
+            <div class="col-xs-12 col-md-offset-2 col-md-8 backWhite">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>{{ job.title }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ job.description }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-offset-5 col-xs-2">
+                        <div class="row">
+                            <a href="{{ path('job_edit', {'id': job.id}) }}"> <i class="fa fa-pencil-square-o fa-3x col-xs-1" aria-hidden="true" ></i></a>
+                            <a data-toggle="modal" href="#delete">Trigger modal<i class="fa fa-trash-o fa-3x col-xs-offset-2 col-xs-1" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------------------------MODAL FOR DELETE ---------------------------------------------------- -->
+
+        <div class="modal fade" id="delete">
+        	<div class="modal-dialog">
+        		<div class="modal-content">
+        			<div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        				<h4 class="modal-title">Suppression de l'offre d'emploi title</h4>
+        			</div>
+        			<div class="modal-body">
+        				Etes vous sur de vouloir supprimer cette offre
+        			</div>
+        			<div class="modal-footer">
+        				<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                        <a href="{{ path('job_delete', {'id': job.id}) }}"><button type="button" class="btn btn-primary">Oui</button></a>
+        			</div>
+        		</div><!-- /.modal-content -->
+        	</div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+    {% endfor %}
+{% endblock %}
