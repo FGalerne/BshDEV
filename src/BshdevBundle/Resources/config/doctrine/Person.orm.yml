@@ -1,7 +1,7 @@
-BshdevBundle\Entity\Career:
+BshdevBundle\Entity\Person:
     type: entity
     table: null
-    repositoryClass: BshdevBundle\Repository\CareerRepository
+    repositoryClass: BshdevBundle\Repository\PersonRepository
     id:
         id:
             type: integer

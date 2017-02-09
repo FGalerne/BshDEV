@@ -1,51 +1,51 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Career</h1>
+    <h1>person</h1>
 
     <table>
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ career.id }}</td>
+                <td>{{ person.id }}</td>
             </tr>
             <tr>
                 <th>Firstname</th>
-                <td>{{ career.firstname }}</td>
+                <td>{{ person.firstname }}</td>
             </tr>
             <tr>
                 <th>Lastname</th>
-                <td>{{ career.lastname }}</td>
+                <td>{{ person.lastname }}</td>
             </tr>
             <tr>
                 <th>Address</th>
-                <td>{{ career.address }}</td>
+                <td>{{ person.address }}</td>
             </tr>
             <tr>
                 <th>Cp</th>
-                <td>{{ career.cp }}</td>
+                <td>{{ person.cp }}</td>
             </tr>
             <tr>
                 <th>Town</th>
-                <td>{{ career.town }}</td>
+                <td>{{ person.town }}</td>
             </tr>
             <tr>
                 <th>Email</th>
-                <td>{{ career.email }}</td>
+                <td>{{ person.email }}</td>
             </tr>
             <tr>
                 <th>Phone</th>
-                <td>{{ career.phone }}</td>
+                <td>{{ person.phone }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('career_index') }}">Back to the list</a>
+            <a href="{{ path('person_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('career_edit', { 'id': career.id }) }}">Edit</a>
+            <a href="{{ path('person_edit', { 'id': person.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

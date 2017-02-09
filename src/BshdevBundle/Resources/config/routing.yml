@@ -1,6 +1,6 @@
-bshdev_career:
-    resource: "@BshdevBundle/Resources/config/routing/career.yml"
-    prefix:   /career
+bshdev_person:
+    resource: "@BshdevBundle/Resources/config/routing/person.yml"
+    prefix:   /person
 
 bshdev_job:
     resource: "@BshdevBundle/Resources/config/routing/job.yml"

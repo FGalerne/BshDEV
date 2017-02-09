@@ -5,9 +5,9 @@ namespace BshdevBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Career
+ * Person
  */
-class Career
+class Person
 {
     /******************************************UPLOAD************************************************************/
     protected function getUploadDir()
@@ -98,7 +98,7 @@ class Career
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -109,7 +109,7 @@ class Career
      * Set firstname
      *
      * @param string $firstname
-     * @return Career
+     * @return Person
      */
     public function setFirstname($firstname)
     {
@@ -121,7 +121,7 @@ class Career
     /**
      * Get firstname
      *
-     * @return string 
+     * @return string
      */
     public function getFirstname()
     {
@@ -132,7 +132,7 @@ class Career
      * Set lastname
      *
      * @param string $lastname
-     * @return Career
+     * @return Person
      */
     public function setLastname($lastname)
     {
@@ -144,7 +144,7 @@ class Career
     /**
      * Get lastname
      *
-     * @return string 
+     * @return string
      */
     public function getLastname()
     {
@@ -155,7 +155,7 @@ class Career
      * Set address
      *
      * @param string $address
-     * @return Career
+     * @return Person
      */
     public function setAddress($address)
     {
@@ -167,7 +167,7 @@ class Career
     /**
      * Get address
      *
-     * @return string 
+     * @return string
      */
     public function getAddress()
     {
@@ -178,7 +178,7 @@ class Career
      * Set cp
      *
      * @param string $cp
-     * @return Career
+     * @return Person
      */
     public function setCp($cp)
     {
@@ -190,7 +190,7 @@ class Career
     /**
      * Get cp
      *
-     * @return string 
+     * @return string
      */
     public function getCp()
     {
@@ -201,7 +201,7 @@ class Career
      * Set town
      *
      * @param string $town
-     * @return Career
+     * @return Person
      */
     public function setTown($town)
     {
@@ -213,7 +213,7 @@ class Career
     /**
      * Get town
      *
-     * @return string 
+     * @return string
      */
     public function getTown()
     {
@@ -224,7 +224,7 @@ class Career
      * Set email
      *
      * @param string $email
-     * @return Career
+     * @return Person
      */
     public function setEmail($email)
     {
@@ -236,7 +236,7 @@ class Career
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -247,7 +247,7 @@ class Career
      * Set phone
      *
      * @param string $phone
-     * @return Career
+     * @return Person
      */
     public function setPhone($phone)
     {
@@ -259,7 +259,7 @@ class Career
     /**
      * Get phone
      *
-     * @return string 
+     * @return string
      */
     public function getPhone()
     {
@@ -275,7 +275,7 @@ class Career
      * Set imageCv
      *
      * @param string $imageCv
-     * @return Career
+     * @return Person
      */
     public function setImageCv($imageCv)
     {

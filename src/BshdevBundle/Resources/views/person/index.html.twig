@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% for career in careers %}
+    {% for person in persons %}
         <div class="row">
-            <a href="{{ path('career_show', {'id': career.id}) }}">
+            <a href="{{ path('person_show', {'id': person.id}) }}">
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite">
 
                     <div class="row ">
@@ -16,11 +16,11 @@
                                 <th class=" col-xs-3">Email</th>
                             </tr>
                             <tr>
-                                <td class="col-xs-2">{{ career.lastname }}</td>
-                                <td class="col-xs-2">{{ career.firstname }}</td>
-                                <td class="col-xs-2">{{ career.address }} {{ career.cp }} {{ career.town }}</td>
-                                <td class="col-xs-3">{{ career.phone }}</td>
-                                <td class="col-xs-3">{{ career.email }}</td>
+                                <td class="col-xs-2">{{ person.lastname }}</td>
+                                <td class="col-xs-2">{{ person.firstname }}</td>
+                                <td class="col-xs-2">{{ person.address }} {{ person.cp }} {{ person.town }}</td>
+                                <td class="col-xs-3">{{ person.phone }}</td>
+                                <td class="col-xs-3">{{ person.email }}</td>
                             </tr>
 
                         </table>
@@ -33,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('career_new') }}">Create a new career</a>
+            <a href="{{ path('person_new') }}">Create a new person</a>
         </li>
     </ul>
 {% endblock %}

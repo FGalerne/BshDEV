@@ -1,0 +1,24 @@
+person_index:
+    path:     /
+    defaults: { _controller: "BshdevBundle:Person:index" }
+    methods:  GET
+
+person_show:
+    path:     /{id}/show
+    defaults: { _controller: "BshdevBundle:Person:show" }
+    methods:  GET
+
+person_new:
+    path:     /new
+    defaults: { _controller: "BshdevBundle:Person:new" }
+    methods:  [GET, POST]
+
+person_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BshdevBundle:Person:edit" }
+    methods:  [GET, POST]
+
+person_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BshdevBundle:Person:delete" }
+    methods:  DELETE
