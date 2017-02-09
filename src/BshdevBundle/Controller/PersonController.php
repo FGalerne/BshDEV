@@ -3,6 +3,7 @@
 namespace BshdevBundle\Controller;
 
 use BshdevBundle\Entity\Person;
+use BshdevBundle\Entity\Job;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -31,7 +32,29 @@ class PersonController extends Controller
      * Creates a new person entity.
      *
      */
-    public function newAction(Request $request)
+
+    public function candidatureAction(Request $request, Job $job)
+    {
+        $person = new Person();
+        $form = $this->createForm('BshdevBundle\Form\PersonType', $person);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $person->setJob($job);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($person);
+            $em->flush($person);
+
+            return $this->redirectToRoute('person_show', array('id' => $person->getId()));
+        }
+
+        return $this->render('BshdevBundle:person:candidature.html.twig', array(
+            'person' => $person,
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function spontaCandidatureAction(Request $request)
     {
         $person = new Person();
         $form = $this->createForm('BshdevBundle\Form\PersonType', $person);
@@ -45,7 +68,7 @@ class PersonController extends Controller
             return $this->redirectToRoute('person_show', array('id' => $person->getId()));
         }
 
-        return $this->render('BshdevBundle:person:new.html.twig', array(
+        return $this->render('BshdevBundle:person:spontaCandidature.html.twig', array(
             'person' => $person,
             'form' => $form->createView(),
         ));
@@ -119,6 +142,6 @@ class PersonController extends Controller
             ->setAction($this->generateUrl('person_delete', array('id' => $person->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
 }
