@@ -1,39 +1,73 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% for person in persons %}
-        <div class="row">
-            <a href="{{ path('person_show', {'id': person.id}) }}">
-                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite">
 
-                    <div class="row ">
-                        <table>
-                            <tr>
-                                <th class=" col-xs-2">Nom</th>
-                                <th class=" col-xs-2">Prénom</th>
-                                <th class="col-xs-3">Adresse postal</th>
-                                <th class=" col-xs-2">Téléphone</th>
-                                <th class=" col-xs-3">Email</th>
-                            </tr>
-                            <tr>
-                                <td class="col-xs-2">{{ person.lastname }}</td>
-                                <td class="col-xs-2">{{ person.firstname }}</td>
-                                <td class="col-xs-2">{{ person.address }} {{ person.cp }} {{ person.town }}</td>
-                                <td class="col-xs-3">{{ person.phone }}</td>
-                                <td class="col-xs-3">{{ person.email }}</td>
-                            </tr>
+    <div class="row">
+        <h2>Candidature spontanée</h2>
+        {% for person in persons %}
+            {% if person.job == NULL %}
+                    <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite">
 
-                        </table>
+                        <div class="row ">
+                            <table>
+                                <tr>
+                                    <th class=" col-xs-2">Nom</th>
+                                    <th class=" col-xs-2">Prénom</th>
+                                    <th class="col-xs-3">Adresse postal</th>
+                                    <th class=" col-xs-1">Téléphone</th>
+                                    <th class=" col-xs-3">Email</th>
+                                    <th class=" col-xs-1">Langages</th>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-2">{{ person.lastname }}</td>
+                                    <td class="col-xs-2">{{ person.firstname }}</td>
+                                    <td class="col-xs-2">{{ person.address }} {{ person.cp }} {{ person.town }}</td>
+                                    <td class="col-xs-1">{{ person.phone }}</td>
+                                    <td class="col-xs-3">{{ person.email }}</td>
+                                </tr>
 
-                    </div>
-                </section>
-            </a>
-        </div>
-    {% endfor %}
+                            </table>
+                            <div class="row">
+                            <div class="col-xs-offset-10 col-xs-2"> <a href="{{ app.request.basepath }}/uploads/{{ person.imageCv }}" download="{{ person.imageCv }}">
+                                    <button type="submit">Télécharger le CV</button></a>
+                            </div>
+                            </div>
+                        </div>
+                    </section>
+            {% endif %}
+        {% endfor %}
+    </div>
 
-{#    <ul>
-        <li>
-            <a href="{{ path('person_new') }}">Create a new person</a>
-        </li>
-    </ul>#}
+    <div class="row offer">
+        <h2>Candidature suite à une offre d'emploi</h2>
+        {% for person in persons %}
+            {% if person.job != NULL %}
+                    <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite">
+
+                        <div class="row ">
+                            <table>
+                                <tr>
+                                    <th class=" col-xs-2">Nom</th>
+                                    <th class=" col-xs-2">Prénom</th>
+                                    <th class="col-xs-3">Adresse postal</th>
+                                    <th class=" col-xs-1">Téléphone</th>
+                                    <th class=" col-xs-3">Email</th>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-2">{{ person.lastname }}</td>
+                                    <td class="col-xs-2">{{ person.firstname }}</td>
+                                    <td class="col-xs-2">{{ person.address }} {{ person.cp }} {{ person.town }}</td>
+                                    <td class="col-xs-1">{{ person.phone }}</td>
+                                    <td class="col-xs-3">{{ person.email }}</td>
+                                    <td class="col-xs-1"> <a href="{{ app.request.basepath }}/uploads/{{ person.imageCv }}" download="{{ person.imageCv }}">
+                                            <button type="submit">Télécharger le CV</button></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+            {% endif %}
+        {% endfor %}
+    </div>
+    }
 {% endblock %}

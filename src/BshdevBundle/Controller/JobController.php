@@ -100,18 +100,18 @@ class JobController extends Controller
     public function editAction(Request $request, Job $job)
     {
         /*$deleteForm = $this->createDeleteForm($job);*/
-        $editForm = $this->createForm('BshdevBundle\Form\JobType', $job);
-        $editForm->handleRequest($request);
+        $form = $this->createForm('BshdevBundle\Form\JobType', $job);
+        $form->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('job_edit', array('id' => $job->getId()));
+            return $this->redirectToRoute('job_list', array('id' => $job->getId()));
         }
 
         return $this->render('BshdevBundle:job:edit.html.twig', array(
             'job' => $job,
-            'edit_form' => $editForm->createView(),
+            'form' => $form->createView(),
             /*'delete_form' => $deleteForm->createView(),*/
         ));
     }

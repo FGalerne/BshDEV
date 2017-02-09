@@ -25,6 +25,7 @@ class PersonController extends Controller
 
         return $this->render('BshdevBundle:Person:index.html.twig', array(
             'persons' => $persons,
+
         ));
     }
 
