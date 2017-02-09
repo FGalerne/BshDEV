@@ -8,17 +8,6 @@ person_show:
     defaults: { _controller: "BshdevBundle:Person:show" }
     methods:  GET
 
-person_candidature:
-    path:     /candidature
-    defaults: { _controller: "BshdevBundle:Person:candidature" }
-    methods:  [GET, POST]
-
-person_spontaCandidature:
-    path:     /spontaCandidature
-    defaults: { _controller: "BshdevBundle:Person:spontaCandidature" }
-    methods:  [GET, POST]
-
-
 person_edit:
     path:     /{id}/edit
     defaults: { _controller: "BshdevBundle:Person:edit" }

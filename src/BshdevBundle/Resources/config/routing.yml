@@ -13,3 +13,13 @@ bshdev_index:
 bshdev_home:
     path:     /
     defaults: { _controller: BshdevBundle:Default:home }
+
+person_candidature:
+    path:     /candidature/{id}
+    defaults: { _controller: "BshdevBundle:Person:candidature" }
+    methods:  [GET, POST]
+
+person_spontaCandidature:
+    path:     /spontaCandidature
+    defaults: { _controller: "BshdevBundle:Person:spontaCandidature" }
+    methods:  [GET, POST]
