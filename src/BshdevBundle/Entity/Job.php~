@@ -80,4 +80,32 @@ class Job
     {
         return $this->description;
     }
+    /**
+     * @var string
+     */
+    private $person;
+
+
+    /**
+     * Set person
+     *
+     * @param string $person
+     * @return Job
+     */
+    public function setPerson($person)
+    {
+        $this->person = $person;
+
+        return $this;
+    }
+
+    /**
+     * Get person
+     *
+     * @return string 
+     */
+    public function getPerson()
+    {
+        return $this->person;
+    }
 }

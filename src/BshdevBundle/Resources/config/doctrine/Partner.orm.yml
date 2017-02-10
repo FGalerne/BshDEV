@@ -17,4 +17,13 @@ BshdevBundle\Entity\Partner:
         alt:
             type: string
             length: 255
-    lifecycleCallbacks: {  }
+        imageLogo:
+            type: string
+            lenght: 255    
+
+    lifecycleCallbacks:
+      prePersist: [ preUploadLogo ]
+      preUpdate: [ preUploadLogo ]
+      postPersist: [ uploadLogo ]
+      postUpdate: [ uploadLogo ]
+      postRemove: [ removeUploadLogo ]

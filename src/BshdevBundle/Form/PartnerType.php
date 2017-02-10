@@ -13,7 +13,18 @@ class PartnerType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('description')->add('alt')        ;
+        $builder
+            ->add('title', null, array(
+                'label' => 'titre',
+            ))
+            ->add('description')
+            ->add('alt', null, array(
+                'label' => 'Légende de l\'image',
+            ))
+            ->add('fileLogo', 'file', array('required' => false,
+                'label'=>'Ajouter un logo',
+            ))
+        ;
     }
     
     /**
