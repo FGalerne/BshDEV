@@ -1,12 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Partner edit</h1>
+        <h1 class="title">Je modifie un partenaire</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        <div class="row block-form">
+            <div class="col-xs-12 col-md-offset-4 col-md-4">
+                {{ form_start(form) }}
+                {{ form_row(form.title) }}
+                {{ form_row(form.description) }}
+                {{ form_row(form.alt) }}
+                {{ form_row(form.fileLogo, {'attr': {'class': 'border'} }) }}
+
+                <input type="submit" value="Ajouter" class="col-xs-offset-5 col-xs-4 button" />
+
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+
 
     <ul>
         <li>
