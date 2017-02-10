@@ -26,5 +26,8 @@ class DefaultController extends Controller
     {
         return $this->render('BshdevBundle::history.html.twig');
     }
-
+    public function expertisesAction()
+    {
+        return $this->render('BshdevBundle::expertises.html.twig');
+    }
 }

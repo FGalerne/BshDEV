@@ -22,6 +22,10 @@ bshdev_history:
     path:     /history
     defaults: { _controller: BshdevBundle:Default:history }
 
+bshdev_expertises:
+    path:     /expertises
+    defaults: { _controller: BshdevBundle:Default:expertises }
+
 person_candidature:
     path:     /candidature/{id}
     defaults: { _controller: "BshdevBundle:Person:candidature" }
