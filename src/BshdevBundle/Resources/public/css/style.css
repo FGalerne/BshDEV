@@ -81,3 +81,14 @@ h2{
     text-align: center;
     font-size: 25px;
 }
+
+/***********************************CONTACT**************************************************/
+.blockAddressMap{
+    margin-top: 10vh;
+}
+.address{
+    margin-top: 15vh;
+}
+.address > li{
+list-style-type: none;
+}
