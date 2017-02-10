@@ -15,10 +15,10 @@ class PersonType extends AbstractType
     {
         $builder
             ->add('firstname', null, array(
-                'label' => 'Prénom'
+                'label' => 'Prénom',
             ))
             ->add('lastname', null, array(
-                'label' => 'Nom'
+                'label' => 'Nom',
             ))
             ->add('address', null, array(
                 'label' => 'Adresse'

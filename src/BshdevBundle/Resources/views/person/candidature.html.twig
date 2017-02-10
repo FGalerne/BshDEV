@@ -7,14 +7,14 @@
     <div class="row block-form">
         <div class="col-xs-12 col-md-offset-4 col-md-4">
             {{ form_start(form) }}
-            {{ form_row(form.firstname) }}
-            {{ form_row(form.lastname) }}
-            {{ form_row(form.address) }}
-            {{ form_row(form.cp) }}
-            {{ form_row(form.town) }}
-            {{ form_row(form.phone) }}
-            {{ form_row(form.email) }}
-            {{ form_row(form.fileCv, {'attr': {'class': 'border'} }) }}
+            {{ form_row(form.firstname,{ 'attr': {'placeholder': 'John'}} ) }}
+            {{ form_row(form.lastname,{'attr': {'placeholder': 'Doe'}}) }}
+            {{ form_row(form.address,{'attr': {'placeholder': '10 rue de paris'}}) }}
+            {{ form_row(form.cp,{'attr': {'placeholder': '75000'}}) }}
+            {{ form_row(form.town,{'attr': {'placeholder': 'Paris'}}) }}
+            {{ form_row(form.phone,{'attr': {'placeholder': '00 00 00 00 00'}}) }}
+            {{ form_row(form.email,{'attr': {'placeholder': 'mail@mail.fr'}}) }}
+            {{ form_row(form.fileCv, {'attr': {'class': 'border' } }) }}
 
             <input type="submit" value="Je Postule !" class="col-xs-offset-5 col-xs-2 button" />
 
