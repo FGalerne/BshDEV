@@ -92,3 +92,12 @@ h2{
 .address > li{
 list-style-type: none;
 }
+
+/***********************************HISTORY*********************************************/
+.blockText, .blockTextPict{
+    margin-top: 3%;
+}
+
+.house{
+    margin-top: 2%;
+}
