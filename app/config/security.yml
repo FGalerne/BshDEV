@@ -42,3 +42,4 @@ security:
         - { path: ^/person/, role: ROLE_ADMIN }
         - { path: ^/job/new, role: ROLE_ADMIN }
         - { path: ^/job/list, role: ROLE_ADMIN }
+        - { path: ^/partner, role: ROLE_ADMIN }

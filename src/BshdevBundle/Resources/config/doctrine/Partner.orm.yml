@@ -1,0 +1,20 @@
+BshdevBundle\Entity\Partner:
+    type: entity
+    table: null
+    repositoryClass: BshdevBundle\Repository\PartnerRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        description:
+            type: text
+        alt:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

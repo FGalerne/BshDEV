@@ -6,6 +6,10 @@ bshdev_job:
     resource: "@BshdevBundle/Resources/config/routing/job.yml"
     prefix:   /job
 
+bshdev_partner:
+    resource: "@BshdevBundle/Resources/config/routing/partner.yml"
+    prefix:   /partner
+
 bshdev_home:
     path:     /
     defaults: { _controller: BshdevBundle:Default:home }

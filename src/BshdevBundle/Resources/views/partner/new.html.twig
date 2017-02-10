@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'BshdevBundle:template:form.html.twig' %}
+
+{% block body %}
+    <h1 class="title">Je crée un nouveau partenaire</h1>
+
+    <div class="row block-form">
+        <div class="col-xs-12 col-md-offset-4 col-md-4">
+            {{ form_start(form) }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.alt) }}
+
+            <input type="submit" value="Ajouter" class="col-xs-offset-5 col-xs-4 button" />
+
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+{% endblock %}
