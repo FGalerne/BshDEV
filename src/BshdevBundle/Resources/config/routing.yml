@@ -6,13 +6,21 @@ bshdev_job:
     resource: "@BshdevBundle/Resources/config/routing/job.yml"
     prefix:   /job
 
-bshdev_index:
-    path:     /index
-    defaults: { _controller: BshdevBundle:Default:index }
-
 bshdev_home:
     path:     /
     defaults: { _controller: BshdevBundle:Default:home }
+
+bshdev_contact:
+    path:     /contact
+    defaults: { _controller: BshdevBundle:Default:contact }
+
+bshdev_references:
+    path:     /references
+    defaults: { _controller: BshdevBundle:Default:references }
+
+bshdev_history:
+    path:     /history
+    defaults: { _controller: BshdevBundle:Default:history }
 
 person_candidature:
     path:     /candidature/{id}
