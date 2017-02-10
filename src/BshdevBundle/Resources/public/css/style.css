@@ -73,7 +73,7 @@ footer{
     margin-top: 2%;
 }
 
-h1{
+h1, h4{
     text-align: center;
 
 }
@@ -100,4 +100,13 @@ list-style-type: none;
 
 .house{
     margin-top: 2%;
+}
+
+/**********************************REFERENCES********************************************/
+.carouReferences{
+    margin-top: 15vh;
+}
+
+.backShadow{
+    box-shadow: 5px 2px 20px rgba(158, 32, 100, 0.5);
 }
