@@ -23,14 +23,14 @@
         </div>
         {% if is_granted('ROLE_ADMIN') %}
             {% for admin in admins %}
-            <div class="row">
-                <div class="col-xs-12">
-                    <a href="{{ path('admin_editContact', {'id' : admin.id}) }}">
-                        <button type="submit">Modifier</button>
-                    </a>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="{{ path('admin_editHomepage', {'id' : admin.id}) }}">
+                            <button type="submit" class="col-xs-offset-5 col-xs-2 button">Modifier</button>
+                        </a>
+                    </div>
                 </div>
-            </div>
-                {% endfor %}
+            {% endfor %}
         {% endif %}
     </section>
 

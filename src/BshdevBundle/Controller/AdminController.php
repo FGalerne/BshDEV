@@ -72,10 +72,10 @@ class AdminController extends Controller
     public function editContactAction(Request $request, Admin $admin)
     {
         $deleteForm = $this->createDeleteForm($admin);
-        $editForm = $this->createForm('BshdevBundle\Form\EditContactType', $admin);
-        $editForm->handleRequest($request);
+        $form = $this->createForm('BshdevBundle\Form\EditContactType', $admin);
+        $form->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_editContact');
@@ -83,7 +83,7 @@ class AdminController extends Controller
 
         return $this->render('BshdevBundle:admin:editContact.html.twig', array(
             'admin' => $admin,
-            'edit_form' => $editForm->createView(),
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -91,10 +91,10 @@ class AdminController extends Controller
     public function editHomepageAction(Request $request, Admin $admin)
     {
         $deleteForm = $this->createDeleteForm($admin);
-        $editForm = $this->createForm('BshdevBundle\Form\EditHomepageType', $admin);
-        $editForm->handleRequest($request);
+        $form = $this->createForm('BshdevBundle\Form\EditHomepageType', $admin);
+        $form->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_editHomepage');
@@ -102,7 +102,7 @@ class AdminController extends Controller
 
         return $this->render('BshdevBundle:admin:editHomepage.html.twig', array(
             'admin' => $admin,
-            'edit_form' => $editForm->createView(),
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -110,10 +110,10 @@ class AdminController extends Controller
     public function editHistoryAction(Request $request, Admin $admin)
     {
         $deleteForm = $this->createDeleteForm($admin);
-        $editForm = $this->createForm('BshdevBundle\Form\EditHistoryType', $admin);
-        $editForm->handleRequest($request);
+        $form = $this->createForm('BshdevBundle\Form\EditHistoryType', $admin);
+        $form->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_editHistory');
@@ -121,7 +121,7 @@ class AdminController extends Controller
 
         return $this->render('BshdevBundle:admin:editHistory.html.twig', array(
             'admin' => $admin,
-            'edit_form' => $editForm->createView(),
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

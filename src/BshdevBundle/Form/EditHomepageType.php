@@ -16,7 +16,10 @@ class EditHomepageType extends AbstractType
         $builder
             ->add('concil')
             ->add('services')
-            ->add('infrastruture')
+            ->add('infrastruture', 'textarea', array(
+                'attr' => array(
+                    'class' => 'ckeditor'
+            )))
         ;
     }
     
