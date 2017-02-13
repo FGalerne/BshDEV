@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AdminType extends AbstractType
+class EditHomepageType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -17,15 +17,7 @@ class AdminType extends AbstractType
             ->add('concil')
             ->add('services')
             ->add('infrastruture')
-            ->add('history')
-            ->add('number')
-            ->add('firstname')
-            ->add('lastname')
-            ->add('address')
-            ->add('postalCode')
-            ->add('town')
-            ->add('phone')
-            ->add('cellphone')        ;
+        ;
     }
     
     /**

@@ -21,6 +21,17 @@
             </div>
 
         </div>
+        {% if is_granted('ROLE_ADMIN') %}
+            {% for admin in admins %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="{{ path('admin_editContact', {'id' : admin.id}) }}">
+                        <button type="submit">Modifier</button>
+                    </a>
+                </div>
+            </div>
+                {% endfor %}
+        {% endif %}
     </section>
 
 

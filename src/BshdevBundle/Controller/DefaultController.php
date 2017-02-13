@@ -3,18 +3,29 @@
 namespace BshdevBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use BshdevBundle\Entity\Admin;
 
 class DefaultController extends Controller
 {
 
     public function homeAction()
     {
-        return $this->render('BshdevBundle::homepage.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $admins = $em->getRepository('BshdevBundle:Admin')->findAll();
+        return $this->render('BshdevBundle::homepage.html.twig', array(
+            'admins' => $admins
+    ));
     }
 
     public function contactAction()
     {
-        return $this->render('BshdevBundle::contact.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $admins = $em->getRepository('BshdevBundle:Admin')->findAll();
+        return $this->render('BshdevBundle::contact.html.twig', array(
+            'admins' => $admins,
+        ));
     }
 
     public function referencesAction()
@@ -24,10 +35,18 @@ class DefaultController extends Controller
 
     public function historyAction()
     {
-        return $this->render('BshdevBundle::history.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $admins = $em->getRepository('BshdevBundle:Admin')->findAll();
+        return $this->render('BshdevBundle::history.html.twig', array(
+            'admins' => $admins
+        ));
     }
     public function expertisesAction()
     {
-        return $this->render('BshdevBundle::expertises.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $admins = $em->getRepository('BshdevBundle:Admin')->findAll();
+        return $this->render('BshdevBundle::expertises.html.twig', array(
+            'admins' => $admins
+        ));
     }
 }

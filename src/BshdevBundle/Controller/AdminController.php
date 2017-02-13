@@ -22,7 +22,7 @@ class AdminController extends Controller
 
         $admins = $em->getRepository('BshdevBundle:Admin')->findAll();
 
-        return $this->render('admin/index.html.twig', array(
+        return $this->render('BshdevBundle:admin:index.html.twig', array(
             'admins' => $admins,
         ));
     }
@@ -45,7 +45,7 @@ class AdminController extends Controller
             return $this->redirectToRoute('admin_show', array('id' => $admin->getId()));
         }
 
-        return $this->render('admin/new.html.twig', array(
+        return $this->render('BshdevBundle:admin:new.html.twig', array(
             'admin' => $admin,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class AdminController extends Controller
     {
         $deleteForm = $this->createDeleteForm($admin);
 
-        return $this->render('admin/show.html.twig', array(
+        return $this->render('BshdevBundle:admin:show.html.twig', array(
             'admin' => $admin,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -69,19 +69,57 @@ class AdminController extends Controller
      * Displays a form to edit an existing admin entity.
      *
      */
-    public function editAction(Request $request, Admin $admin)
+    public function editContactAction(Request $request, Admin $admin)
     {
         $deleteForm = $this->createDeleteForm($admin);
-        $editForm = $this->createForm('BshdevBundle\Form\AdminType', $admin);
+        $editForm = $this->createForm('BshdevBundle\Form\EditContactType', $admin);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_edit', array('id' => $admin->getId()));
+            return $this->redirectToRoute('admin_editContact');
         }
 
-        return $this->render('admin/edit.html.twig', array(
+        return $this->render('BshdevBundle:admin:editContact.html.twig', array(
+            'admin' => $admin,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    public function editHomepageAction(Request $request, Admin $admin)
+    {
+        $deleteForm = $this->createDeleteForm($admin);
+        $editForm = $this->createForm('BshdevBundle\Form\EditHomepageType', $admin);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_editHomepage');
+        }
+
+        return $this->render('BshdevBundle:admin:editHomepage.html.twig', array(
+            'admin' => $admin,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    public function editHistoryAction(Request $request, Admin $admin)
+    {
+        $deleteForm = $this->createDeleteForm($admin);
+        $editForm = $this->createForm('BshdevBundle\Form\EditHistoryType', $admin);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_editHistory');
+        }
+
+        return $this->render('BshdevBundle:admin:editHistory.html.twig', array(
             'admin' => $admin,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

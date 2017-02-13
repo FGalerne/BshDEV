@@ -38,20 +38,13 @@
 
             </div>
         </div>
-        {% if is_granted('ROLE_ADMIN') %}
-            {% for admin in admins %}
-                <div class="row">
-                    <div class="col-xs-12">
-                        <a href="{{ path('admin_editHistory', {'id' : admin.id}) }}">
-                            <button type="submit">Modifier</button>
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
-        {% endif %}
     </section>
 
+    <section class="row">
+        <div class="col-xs-offset-2 col-xs-8">
 
+        </div>
+    </section>
 
 
 {% endblock%}

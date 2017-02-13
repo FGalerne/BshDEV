@@ -13,9 +13,19 @@ admin_new:
     defaults: { _controller: "BshdevBundle:Admin:new" }
     methods:  [GET, POST]
 
-admin_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "BshdevBundle:Admin:edit" }
+admin_editContact:
+    path:     /{id}/Contact
+    defaults: { _controller: "BshdevBundle:Admin:editContact" }
+    methods:  [GET, POST]
+
+admin_editHomepage:
+    path:     /{id}/Homepage
+    defaults: { _controller: "BshdevBundle:Admin:editHomepage" }
+    methods:  [GET, POST]
+
+admin_editHistory:
+    path:     /{id}/History
+    defaults: { _controller: "BshdevBundle:Admin:editHistory" }
     methods:  [GET, POST]
 
 admin_delete:
