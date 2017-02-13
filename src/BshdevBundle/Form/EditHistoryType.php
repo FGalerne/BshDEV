@@ -14,13 +14,27 @@ class EditHistoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname')
-            ->add('lastname')
-            ->add('address')
-            ->add('postalCode')
-            ->add('town')
-            ->add('phone')
-            ->add('cellphone')
+            ->add('firstname', null, array(
+                'label' => 'Prénom'
+            ))
+            ->add('lastname', null, array(
+                'label' => 'Nom'
+            ))
+            ->add('address', null, array(
+                'label' => 'Adresse'
+            ))
+            ->add('postalCode', null, array(
+                'label' => 'code postal'
+            ))
+            ->add('town', null, array(
+                'label' => 'Ville'
+            ))
+            ->add('phone', null, array(
+                'label' => 'Téléphone'
+            ))
+            ->add('cellphone', null, array(
+                'label' => 'Portable'
+            ))
         ;
     }
     

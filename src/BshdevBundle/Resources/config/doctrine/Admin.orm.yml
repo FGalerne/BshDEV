@@ -10,11 +10,9 @@ BshdevBundle\Entity\Admin:
                 strategy: AUTO
     fields:
         concil:
-            type: string
-            length: 255
+            type: text
         services:
-            type: string
-            length: 255
+            type: text
         infrastruture:
             type: text
         history:

@@ -14,9 +14,18 @@ class EditHomepageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('concil')
-            ->add('services')
+            ->add('concil', 'textarea', array(
+                'label' => 'Description',
+                'attr' => array(
+                    'class' => 'ckeditor'
+                )))
+            ->add('services', 'textarea', array(
+                'label' => 'Description',
+                'attr' => array(
+                    'class' => 'ckeditor'
+                )))
             ->add('infrastruture', 'textarea', array(
+                'label' => 'description',
                 'attr' => array(
                     'class' => 'ckeditor'
             )))

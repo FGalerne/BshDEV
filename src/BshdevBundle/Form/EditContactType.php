@@ -14,8 +14,18 @@ class EditContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('history')
-            ->add('number')
+            ->add('history', 'textarea', array(
+                'label' => 'Description',
+                'attr' => array(
+                    'class' => 'ckeditor'
+                )
+            ))
+            ->add('number', 'textarea', array(
+                'label' => 'Description',
+                'attr' => array(
+                    'class' => 'ckeditor'
+                )
+            ))
         ;
     }
     
