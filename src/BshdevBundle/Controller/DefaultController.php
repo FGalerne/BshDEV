@@ -14,7 +14,8 @@ class DefaultController extends Controller
 
         $admins = $em->getRepository('BshdevBundle:Admin')->findAll();
         return $this->render('BshdevBundle::homepage.html.twig', array(
-            'admins' => $admins
+            'admins' => $admins,
+
     ));
     }
 

@@ -11,7 +11,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('bshdev_contact') }}">
+            <a href="{{ path('bshdev_home') }}">
                 <button type="submit" class="button">Retour à la page</button></a>
         </li>
         <li>
@@ -20,4 +20,11 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+    <script type="text/javascript" >
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'demo' );
+    </script>
+    {{ dump() }}
 {% endblock %}

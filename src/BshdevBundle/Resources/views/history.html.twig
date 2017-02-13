@@ -1,54 +1,52 @@
 {% extends '::base.html.twig' %}
 {% block body %}
     <section class="row">
-        <div class="col-md-offset-1 col-md-10">
-            <div class="row blockTextPict">
-                <div class="col-xs-12 col-md-6 blockText">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-offset-2 col-md-8 backWhite">
-                            <div class="center-block">
-                                <h3 class="title">Notre histoire</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem cum ea laborum laudantium molestias officia, ullam vel! Blanditiis deserunt dolorem eum expedita minus molestiae nihil possimus quaerat quasi vero. Ratione?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, repellat sequi? Asperiores dignissimos eos esse et maxime non nulla possimus quisquam rem tenetur? Assumenda debitis eaque, error omnis quidem</p>
+        {% for admin in admins %}
+            <div class="col-md-offset-1 col-md-10">
+                <div class="row blockTextPict">
+                    <div class="col-xs-12 col-md-6 blockText">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-2 col-md-8 backWhite">
+                                <div class="center-block">
+                                    <h3 class="title">Notre histoire</h3>
+                                    {{ admin.history }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-offset-2 col-md-8 backWhite">
+                                <div class="center-block">
+                                    <h3 class="title">Nos chriffres clés</h3>
+                                    {{ admin.number }}
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-offset-2 col-md-8 backWhite">
-                            <div class="center-block">
-                                <h3 class="title">Nos chriffres clés</h3>
-                                <ul>
-                                    <li>1 millions de CA</li>
-                                    <li>3 salariés</li>
-                                    <li>40 projets par an</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden-xs col-sm-12 col-md-6">
-                    <div class="row">
+                    <div class="hidden-xs col-sm-12 col-md-6">
+                        <div class="row">
 
                             <div>
                                 <img src="{{ asset('bundles/bshdev/img/house.jpg') }}" alt="Bâtiment BshDEV" class="hidden-xs img-responsive center-block house">
                             </div>
 
+                        </div>
                     </div>
+
+
                 </div>
-
-
             </div>
-        </div>
-        {% if is_granted('ROLE_ADMIN') %}
-            {% for admin in admins %}
+            {% if is_granted('ROLE_ADMIN') %}
+
                 <div class="row">
                     <div class="col-xs-12">
-                        <a href="{{ path('admin_editHomepage', {'id' : admin.id}) }}">
+                        <a href="{{ path('admin_editHistory', {'id' : admin.id}) }}">
                             <button type="submit" class="col-xs-offset-5 col-xs-2 button">Modifier</button>
                         </a>
                     </div>
                 </div>
-            {% endfor %}
-        {% endif %}
+
+            {% endif %}
+        {% endfor %}
     </section>
 
 

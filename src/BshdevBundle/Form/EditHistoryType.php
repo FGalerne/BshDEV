@@ -14,26 +14,17 @@ class EditHistoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', null, array(
-                'label' => 'Prénom'
+            ->add('history', 'textarea', array(
+                'label' => 'Description',
+                'attr' => array(
+                    'class' => 'ckeditor'
+                )
             ))
-            ->add('lastname', null, array(
-                'label' => 'Nom'
-            ))
-            ->add('address', null, array(
-                'label' => 'Adresse'
-            ))
-            ->add('postalCode', null, array(
-                'label' => 'code postal'
-            ))
-            ->add('town', null, array(
-                'label' => 'Ville'
-            ))
-            ->add('phone', null, array(
-                'label' => 'Téléphone'
-            ))
-            ->add('cellphone', null, array(
-                'label' => 'Portable'
+            ->add('number', 'textarea', array(
+                'label' => 'Description',
+                'attr' => array(
+                    'class' => 'ckeditor'
+                )
             ))
         ;
     }
@@ -53,7 +44,7 @@ class EditHistoryType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'bshdevbundle_admin';
+        return 'bshdevbundle_editContact';
     }
 
 

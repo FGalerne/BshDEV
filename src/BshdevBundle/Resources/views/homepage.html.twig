@@ -1,6 +1,8 @@
 {% extends '::base.html.twig' %}
 {% block body %}
+
     <section class="row carousel-row">
+    {% for admin in admins %}
         <div class="col-xs-12 slide-row">
             <div class="carousel slide slide-carousel" id="carousel-1" data-ride="carousel">
                 <!-- Indicators -->
@@ -24,39 +26,33 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="row">
+        </section>
+        <section class="row">
         <div class="experiences">
             <div class=" col-xs-12 col-md-offset-2 col-md-2 backWhite block-homepage">
                 <h3 class="title">CONSEIL</h3>
-                <p>Accompagner les directions générales et les directions informatiques des grands groupes dans le cadre de leurs projets de transformation de leurs systèmes d’information :</p>
-                <ul>
-                    <li>expertise MOA Banque Finance</li>
-                    <li>Expertise MOA Assurance</li>
-                    <li>Conseil en Décisionnel</li>
-                    <li>MDM</li>
-                    <li>Big Data</li>
-                </ul>
+                {{ admin.concil }}
             </div>
             <div class=" col-xs-12 col-md-offset-1 col-md-2 backWhite block-homepage">
                 <h3 class="title">SERVICES NUMERIQUES</h3>
-                <p>Apporter une expertise à haute valeur ajoutée dans le déploiement de services numériques, aussi bien dans le Build que dans le Run.</p>
+                {{ admin.services }}
             </div>
             <div class=" col-xs-12 col-md-offset-1 col-md-2 backWhite block-homepage">
                 <h3 class="title">INFRASTRUCTURES</h3>
-                <p>Accompagner les organisations dans la définition des architectures, l’intégration, l’optimisation, la supervision, l’administration, le stockage et la sécurité des données.</p>
+                {{ admin.infrastruture }}
             </div>
         </div>
         {% if is_granted('ROLE_ADMIN') %}
-            {% for admin in admins %}
-                <div class="row">
-                    <div class="col-xs-12">
-                        <a href="{{ path('admin_editHomepage', {'id' : admin.id}) }}">
-                            <button type="submit" class="col-xs-offset-5 col-xs-2 button">Modifier</button>
-                        </a>
-                    </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="{{ path('admin_editHomepage', {'id' : admin.id}) }}">
+                        <button type="submit" class="col-xs-offset-5 col-xs-2 button">Modifier</button>
+                    </a>
                 </div>
-            {% endfor %}
+            </div>
+
         {% endif %}
+    {% endfor %}
     </section>
 {% endblock%}

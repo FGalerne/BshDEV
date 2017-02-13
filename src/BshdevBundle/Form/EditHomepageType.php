@@ -17,7 +17,8 @@ class EditHomepageType extends AbstractType
             ->add('concil', 'textarea', array(
                 'label' => 'Description',
                 'attr' => array(
-                    'class' => 'ckeditor'
+                    'class' => 'ckeditor',
+                    'id' => 'demo'
                 )))
             ->add('services', 'textarea', array(
                 'label' => 'Description',
@@ -47,7 +48,7 @@ class EditHomepageType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'bshdevbundle_admin';
+        return 'bshdevbundle_editHomepage';
     }
 
 
