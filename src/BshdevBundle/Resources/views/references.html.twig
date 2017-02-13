@@ -13,16 +13,17 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner backShadow">
                     <div class="item active">
+                        {% for partner in partners %}
                         <img src="{{ asset('bundles/bshdev/img/bouygues-telecom.jpg') }}" alt="Image" class="center-block">
                         <div class="slide-content">
-                            <h4>Nos réalisations</h4>
+                            <h4>{{ partner.title }}</h4>
                             <p>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+                                {{ partner.description }}
                             </p>
                         </div>
+                            {% endfor %}
                     </div>
-                    <div class="item">
+                    {#<div class="item">
                         <img src="{{ asset('bundles/bshdev/img/steria.jpg') }}" alt="Image" class="center-block">
                         <div class="slide-content">
                             <h4>Nos réalisations</h4>
@@ -41,7 +42,7 @@
                                 sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
                             </p>
                         </div>
-                    </div>
+                    </div>#}
                 </div>
             </div>
 

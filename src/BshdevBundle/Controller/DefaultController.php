@@ -31,7 +31,12 @@ class DefaultController extends Controller
 
     public function referencesAction()
     {
-        return $this->render('BshdevBundle::references.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $partners = $em->getRepository('BshdevBundle:Partner')->findAll();
+        return $this->render('BshdevBundle::references.html.twig', array(
+            'partners' => $partners
+        ));
     }
 
     public function historyAction()
