@@ -16,8 +16,16 @@
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
             {% if is_granted("ROLE_ADMIN") %}
-				<li class="active"><a href="{{ path('bshdev_home') }}">Modifier la page Acceuil</a></li>
 				<li><a href="{{ path('person_index') }}">Candidatures</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown">Modifier les pages<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Accueil</a></li>
+						<li><a href="#">A propos</a></li>
+						<li><a href="#">Savoir faire</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown">Partenaire<b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -32,7 +40,6 @@
 						<li><a href="{{ path('job_list') }}">Modifier/Supprimer</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Nous contacter</a></li>
 				<li>
 					<a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
 				</li>
