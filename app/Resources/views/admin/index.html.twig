@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Admins list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Concil</th>
+                <th>Services</th>
+                <th>Infrastruture</th>
+                <th>History</th>
+                <th>Number</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Address</th>
+                <th>Postalcode</th>
+                <th>Town</th>
+                <th>Phone</th>
+                <th>Cellphone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for admin in admins %}
+            <tr>
+                <td><a href="{{ path('admin_show', { 'id': admin.id }) }}">{{ admin.id }}</a></td>
+                <td>{{ admin.concil }}</td>
+                <td>{{ admin.services }}</td>
+                <td>{{ admin.infrastruture }}</td>
+                <td>{{ admin.history }}</td>
+                <td>{{ admin.number }}</td>
+                <td>{{ admin.firstname }}</td>
+                <td>{{ admin.lastname }}</td>
+                <td>{{ admin.address }}</td>
+                <td>{{ admin.postalCode }}</td>
+                <td>{{ admin.town }}</td>
+                <td>{{ admin.phone }}</td>
+                <td>{{ admin.cellphone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_show', { 'id': admin.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_edit', { 'id': admin.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_new') }}">Create a new admin</a>
+        </li>
+    </ul>
+{% endblock %}

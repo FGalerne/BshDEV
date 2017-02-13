@@ -108,4 +108,34 @@ class Job
     {
         return $this->person;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->person = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add person
+     *
+     * @param \BshdevBundle\Entity\Person $person
+     * @return Job
+     */
+    public function addPerson(\BshdevBundle\Entity\Person $person)
+    {
+        $this->person[] = $person;
+
+        return $this;
+    }
+
+    /**
+     * Remove person
+     *
+     * @param \BshdevBundle\Entity\Person $person
+     */
+    public function removePerson(\BshdevBundle\Entity\Person $person)
+    {
+        $this->person->removeElement($person);
+    }
 }

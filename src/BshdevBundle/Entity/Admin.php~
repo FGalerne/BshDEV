@@ -1,0 +1,83 @@
+<?php
+
+namespace BshdevBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Admin
+ */
+class Admin
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $concil;
+
+    /**
+     * @var string
+     */
+    private $services;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set concil
+     *
+     * @param string $concil
+     * @return Admin
+     */
+    public function setConcil($concil)
+    {
+        $this->concil = $concil;
+
+        return $this;
+    }
+
+    /**
+     * Get concil
+     *
+     * @return string 
+     */
+    public function getConcil()
+    {
+        return $this->concil;
+    }
+
+    /**
+     * Set services
+     *
+     * @param string $services
+     * @return Admin
+     */
+    public function setServices($services)
+    {
+        $this->services = $services;
+
+        return $this;
+    }
+
+    /**
+     * Get services
+     *
+     * @return string 
+     */
+    public function getServices()
+    {
+        return $this->services;
+    }
+}

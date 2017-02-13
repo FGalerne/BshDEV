@@ -1,0 +1,45 @@
+BshdevBundle\Entity\Admin:
+    type: entity
+    table: null
+    repositoryClass: BshdevBundle\Repository\AdminRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        concil:
+            type: string
+            length: 255
+        services:
+            type: string
+            length: 255
+        infrastruture:
+            type: text
+        history:
+            type: text
+        number:
+            type: text
+        firstname:
+            type: string
+            length: 100
+        lastname:
+            type: string
+            length: 100
+        address:
+            type: string
+            length: 255
+        postalCode:
+            type: string
+            length: 5
+        town:
+            type: string
+            length: 100
+        phone:
+            type: string
+            length: 10
+        cellphone:
+            type: string
+            length: 10
+    lifecycleCallbacks: {  }

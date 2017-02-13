@@ -154,4 +154,32 @@ class Partner
     {
         return $this->alt;
     }
+    /**
+     * @var string
+     */
+    private $imageLogo;
+
+
+    /**
+     * Set imageLogo
+     *
+     * @param string $imageLogo
+     * @return Partner
+     */
+    public function setImageLogo($imageLogo)
+    {
+        $this->imageLogo = $imageLogo;
+
+        return $this;
+    }
+
+    /**
+     * Get imageLogo
+     *
+     * @return string 
+     */
+    public function getImageLogo()
+    {
+        return $this->imageLogo;
+    }
 }

@@ -10,6 +10,10 @@ bshdev_partner:
     resource: "@BshdevBundle/Resources/config/routing/partner.yml"
     prefix:   /partner
 
+bshdev_admin:
+    resource: "@BshdevBundle/Resources/config/routing/admin.yml"
+    prefix:   /admin
+
 bshdev_home:
     path:     /
     defaults: { _controller: BshdevBundle:Default:home }
