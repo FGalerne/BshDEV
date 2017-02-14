@@ -48,6 +48,10 @@ footer{
     font-size: 18px;
 }
 
+.homeCarousel{
+    margin-top: -120px;
+}
+
 /*****************LOGIN***********************************/
 
 .button{
@@ -55,6 +59,10 @@ footer{
     color: white;
     margin-top: 2%;
     margin-bottom: 1%;
+}
+
+.login{
+    margin-top: 30vh;
 }
 
 /****************FORM*************************************/

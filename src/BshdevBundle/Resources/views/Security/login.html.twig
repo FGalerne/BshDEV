@@ -11,7 +11,7 @@
         {% if csrf_token %}
             <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
         {% endif %}
-        <div class="row">
+        <div class="row login">
             <div class="col-xs-offset-4 col-xs-4">
 
                 <div class="form-group row">
@@ -39,4 +39,6 @@
         </div>
     </form>
 
-{% endblock fos_user_content %}
+
+
+    {% endblock fos_user_content %}
