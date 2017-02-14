@@ -28,6 +28,12 @@ nav{
     border: none;
 }
 
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+
+
+
+}
+
 /*******************FOOTER *****************************/
 footer{
     margin-top: 20px;
