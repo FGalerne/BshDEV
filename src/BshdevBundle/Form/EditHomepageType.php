@@ -2,6 +2,7 @@
 
 namespace BshdevBundle\Form;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,22 +15,15 @@ class EditHomepageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('concil', 'textarea', array(
+            ->add('concil', CKEditorType::class, array(
                 'label' => 'Description',
-                'attr' => array(
-                    'class' => 'ckeditor',
-                    'id' => 'demo'
-                )))
-            ->add('services', 'textarea', array(
+                ))
+            ->add('services', CKEditorType::class, array(
                 'label' => 'Description',
-                'attr' => array(
-                    'class' => 'ckeditor'
-                )))
-            ->add('infrastruture', 'textarea', array(
+                ))
+            ->add('infrastruture', CKEditorType::class, array(
                 'label' => 'description',
-                'attr' => array(
-                    'class' => 'ckeditor'
-            )))
+                ))
         ;
     }
     

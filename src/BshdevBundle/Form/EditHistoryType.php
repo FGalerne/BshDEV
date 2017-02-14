@@ -14,17 +14,12 @@ class EditHistoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('history', 'textarea', array(
+            ->add('history', CKEditorType::class, array(
                 'label' => 'Description',
-                'attr' => array(
-                    'class' => 'ckeditor'
-                )
+
             ))
-            ->add('number', 'textarea', array(
+            ->add('number', CKEditorType::class, array(
                 'label' => 'Description',
-                'attr' => array(
-                    'class' => 'ckeditor'
-                )
             ))
         ;
     }

@@ -31,15 +31,16 @@
         <div class="experiences">
             <div class=" col-xs-12 col-md-offset-2 col-md-2 backWhite block-homepage">
                 <h3 class="title">CONSEIL</h3>
-                <div id="concil">{{ admin.concil }}</div>
+                <!-- |raw -> Displays text without html basics-->
+                <div id="concil">{{ admin.concil | raw }}</div>
             </div>
             <div class=" col-xs-12 col-md-offset-1 col-md-2 backWhite block-homepage">
                 <h3 class="title">SERVICES NUMERIQUES</h3>
-                {{ admin.services }}
+                {{ admin.services | raw }}
             </div>
             <div class=" col-xs-12 col-md-offset-1 col-md-2 backWhite block-homepage">
                 <h3 class="title">INFRASTRUCTURES</h3>
-                {{ admin.infrastruture }}
+                {{ admin.infrastruture | raw}}
             </div>
         </div>
         {% if is_granted('ROLE_ADMIN') %}
