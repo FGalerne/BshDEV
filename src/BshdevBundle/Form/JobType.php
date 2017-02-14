@@ -2,6 +2,7 @@
 
 namespace BshdevBundle\Form;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,7 +14,14 @@ class JobType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('description')        ;
+        $builder
+            ->add('title', null, array(
+                'label' => 'Titre de l\'annonce'
+            ))
+            ->add('description', CKEditorType::class, array(
+                'label' => 'Description'
+            ))
+        ;
     }
     
     /**
