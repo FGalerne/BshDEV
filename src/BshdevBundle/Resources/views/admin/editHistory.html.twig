@@ -5,7 +5,8 @@
     <h1>Admin edit</h1>
 
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.history, {'attr': { 'id' : 'history'}}) }}
+    {{ form_row(form.number) }}
     <input type="submit" value="Je valide ma modification" class="button" />
     {{ form_end(form) }}
 
@@ -20,4 +21,8 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+    <script type="text/javascript">
+        CKEDITOR.replace( 'history');
+
+    </script>
 {% endblock %}

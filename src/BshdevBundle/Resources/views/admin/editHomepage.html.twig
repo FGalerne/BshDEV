@@ -5,7 +5,9 @@
     <h1>Admin edit</h1>
 
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.concil, {'attr': {'id':'demo'}}) }}
+    {{ form_row(form.services, {'attr': {'id':'demo'}}) }}
+    {{ form_row(form.infrastruture, {'attr': {'id':'demo'}}) }}
     <input type="submit" value="Je valide ma modification" class="button" />
     {{ form_end(form) }}
 

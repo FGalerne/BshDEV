@@ -31,7 +31,7 @@
         <div class="experiences">
             <div class=" col-xs-12 col-md-offset-2 col-md-2 backWhite block-homepage">
                 <h3 class="title">CONSEIL</h3>
-                {{ admin.concil }}
+                <div id="concil">{{ admin.concil }}</div>
             </div>
             <div class=" col-xs-12 col-md-offset-1 col-md-2 backWhite block-homepage">
                 <h3 class="title">SERVICES NUMERIQUES</h3>
@@ -55,4 +55,9 @@
         {% endif %}
     {% endfor %}
     </section>
+
+    <script type="text/javascript">
+        CKEDITOR.replace( 'concil');
+
+    </script>
 {% endblock%}
