@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" data-spy="scroll">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -13,7 +13,7 @@
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse navbar-ex1-collapse">
+	<div class="collapse navbar-collapse navbar-ex1-collapse" id="spy-scroll-id" >
 		<ul class="nav navbar-nav">
             {% if is_granted("ROLE_ADMIN") %}
 				<li><a href="{{ path('person_index') }}">Candidatures</a></li>
