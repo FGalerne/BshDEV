@@ -4,18 +4,22 @@ namespace BshdevBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class CareerControllerTest extends WebTestCase
+
+
+class HomepageControllerTestControllerTest extends WebTestCase
 {
-    /*
-    public function testCompleteScenario()
+
+    public function testIndex()
     {
         // Create a new client to browse the application
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/person/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /person/");
-        $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
+        $crawler = $client->request('GET', '/');
+        $result = $crawler->filter('html:contains("Conseil")')->count();
+        $expected = 0;
+        $this->assertGreaterThan($expected, $result);
+       /* $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
@@ -48,8 +52,8 @@ class CareerControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
 
         // Check the entity has been delete on the list
-        $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
+        $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());*/
     }
 
-    */
+
 }
