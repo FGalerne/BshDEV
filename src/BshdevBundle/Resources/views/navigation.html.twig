@@ -20,7 +20,7 @@
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown">Modifier les pages<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="{{ path('homepage') }}">Accueil</a></li>
+						<li ><a href="{{ path('homepage') }}">Accueil</a></li>
 						<li><a href="{{ path('bshdev_history') }}">A propos</a></li>
 						<li><a href="#">Savoir faire</a></li>
 						<li><a href="{{ path('bshdev_contact') }}">Contact</a></li>
@@ -46,7 +46,7 @@
             {% else %}
 				<li><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
 
-				<li class="active"><a href="{{ path('bshdev_home') }}">Accueil</a></li>
+				<li ><a href="{{ path('bshdev_home') }}">Accueil</a></li>
 				<li><a href="{{ path('bshdev_history') }}">A propos</a></li>
 				<li><a href="{{ path('bshdev_expertises') }}">Savoir-faire</a></li>
 				<li><a href="{{ path('bshdev_references') }}">Références</a></li>

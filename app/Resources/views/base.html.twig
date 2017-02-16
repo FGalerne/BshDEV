@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta title="BshDEV">
-        <meta content="BshDEV, SSII, ">
+        <meta name="description" content="BshDEV, Chartres, ESN, SSII, Java, .NET, PHP,  Android, Winphone, Xamarin, C#, informatique, programmation, développement, web, mySQL, Oracle, server ">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Bienvenue sur BshDEV{% endblock %}</title>
         {% block stylesheets %}
@@ -32,6 +32,17 @@
         <script src="https://use.fontawesome.com/dd3c29bfd9.js"></script>
 
         <script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
+
+        <script>
+            var url = window.location;
+            // Will only work if string in href matches with location
+            $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+            // Will also work for relative and absolute hrefs
+            $('ul.nav a').filter(function() {
+                return this.href == url;
+            }).parent().addClass('active');
+        </script>
 
 
     {% endblock %}
