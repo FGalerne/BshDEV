@@ -3,7 +3,7 @@
 
     <section class="row carousel-row">
     {% for admin in admins %}
-        <div class="col-xs-12 slide-row">
+        <div class="col-xs-12 slide-row homeCarousel">
             <div class="carousel slide slide-carousel" id="carousel-1" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -15,10 +15,10 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="{{ asset('bundles/bshdev/img/css_code.jpg') }}" alt="Image">
+                        <img src="{{ asset('bundles/bshdev/img/Visuel_Slide_Conseil_1600x647.jpg') }}" alt="Image">
                     </div>
                     <div class="item">
-                        <img src="{{ asset('bundles/bshdev/img/digital-transformation.jpg') }}" alt="Image">
+                        <img src="{{ asset('bundles/bshdev/img/Visuel_Slider_Services_1600x647.jpg') }}" alt="Image">
                     </div>
                     <div class="item">
                         <img src="{{ asset('bundles/bshdev/img/bat.jpg') }}" alt="Image">
@@ -29,16 +29,16 @@
         </section>
         <section class="row">
         <div class="experiences">
-            <div class=" col-xs-12 col-md-offset-2 col-md-2 backWhite block-homepage">
+            <div class=" col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-2 backWhite block-homepage">
                 <h3 class="title">CONSEIL</h3>
                 <!-- |raw -> Displays text without html basics-->
                 <div id="concil">{{ admin.concil | raw }}</div>
             </div>
-            <div class=" col-xs-12 col-md-offset-1 col-md-2 backWhite block-homepage">
+            <div class=" col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 backWhite block-homepage">
                 <h3 class="title">SERVICES NUMERIQUES</h3>
                 {{ admin.services | raw }}
             </div>
-            <div class=" col-xs-12 col-md-offset-1 col-md-2 backWhite block-homepage">
+            <div class=" col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 backWhite block-homepage">
                 <h3 class="title">INFRASTRUCTURES</h3>
                 {{ admin.infrastruture | raw}}
             </div>
@@ -57,8 +57,4 @@
     {% endfor %}
     </section>
 
-    <script type="text/javascript">
-        CKEDITOR.replace( 'concil');
-
-    </script>
 {% endblock%}

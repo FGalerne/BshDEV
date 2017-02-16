@@ -9,8 +9,15 @@
 
 /*************** NAVBAR  ***************************/
 
+nav{
+    z-index: 150000;
+}
+.navbar-toggle{
+    margin-top: 40px;
+}
 .navbar-header{
     height: 120px;
+
 }
 
 .navbar-nav{
@@ -20,7 +27,30 @@
 
 .navbar-default{
     margin-bottom: 0;
+    background-color: inherit;
+    border: none;
 }
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: lightblue;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: black;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: lightblue;
+    background-color: #518e86;
+
+}
+
 
 /*******************FOOTER *****************************/
 footer{
@@ -48,6 +78,11 @@ footer{
     font-size: 18px;
 }
 
+.homeCarousel{
+    margin-top: -120px;
+    z-index: 0;
+}
+
 /*****************LOGIN***********************************/
 
 .button{
@@ -55,6 +90,10 @@ footer{
     color: white;
     margin-top: 2%;
     margin-bottom: 1%;
+}
+
+.login{
+    margin-top: 30vh;
 }
 
 /****************FORM*************************************/

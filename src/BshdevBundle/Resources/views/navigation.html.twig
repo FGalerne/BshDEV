@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" data-spy="scroll">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -13,14 +13,14 @@
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
-	<div class="collapse navbar-collapse navbar-ex1-collapse">
+	<div class="collapse navbar-collapse navbar-ex1-collapse" id="spy-scroll-id" >
 		<ul class="nav navbar-nav">
             {% if is_granted("ROLE_ADMIN") %}
 				<li><a href="{{ path('person_index') }}">Candidatures</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown">Modifier les pages<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="{{ path('homepage') }}">Accueil</a></li>
+						<li ><a href="{{ path('homepage') }}">Accueil</a></li>
 						<li><a href="{{ path('bshdev_history') }}">A propos</a></li>
 						<li><a href="#">Savoir faire</a></li>
 						<li><a href="{{ path('bshdev_contact') }}">Contact</a></li>
@@ -46,7 +46,7 @@
             {% else %}
 				<li><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
 
-				<li class="active"><a href="{{ path('bshdev_home') }}">Accueil</a></li>
+				<li ><a href="{{ path('bshdev_home') }}">Accueil</a></li>
 				<li><a href="{{ path('bshdev_history') }}">A propos</a></li>
 				<li><a href="{{ path('bshdev_expertises') }}">Savoir-faire</a></li>
 				<li><a href="{{ path('bshdev_references') }}">Références</a></li>
@@ -63,3 +63,5 @@
 
 	</div><!-- /.navbar-collapse -->
 </nav>
+
+
