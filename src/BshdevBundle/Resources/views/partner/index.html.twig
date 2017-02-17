@@ -4,7 +4,7 @@
     <h1>Modifier ou supprimer un partenaire</h1>
     {% for partner in partners %}
         <section class="row">
-            <div class="col-xs-12 col-md-offset-2 col-md-8 backWhite">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8 backWhite">
                 <div class="row">
                     <div class="col-xs-12">
                         <h2>{{ partner.title }}</h2>
@@ -16,10 +16,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-offset-10 col-xs-2">
+                    <div class="col-xs-offset-9 col-xs-3">
                         <div class="row">
-                            <a href="{{ path('partner_edit', {'id': partner.id}) }}"> <i class="fa fa-pencil-square-o fa-3x col-xs-1" aria-hidden="true" ></i></a>
-                            <a data-toggle="modal" href="#delete"><i class="fa fa-trash-o fa-3x col-xs-offset-2 col-xs-1" aria-hidden="true"></i></a>
+                            <a href="{{ path('partner_edit', {'id': partner.id}) }}"> <i class="fa fa-pencil-square-o fa-2x col-xs-1" aria-hidden="true" ></i></a>
+                            <a data-toggle="modal" href="#delete"><i class="fa fa-trash-o fa-2x col-xs-offset-2 col-xs-1" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
