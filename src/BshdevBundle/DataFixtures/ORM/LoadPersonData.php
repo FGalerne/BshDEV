@@ -6,7 +6,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use BshdevBundle\Entity\Person;
 use Symfony\Component\HttpFoundation\File\File;
 
-class LoadPartnerData implements FixtureInterface
+class LoadPersonData implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {

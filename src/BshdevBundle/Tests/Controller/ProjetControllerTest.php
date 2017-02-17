@@ -3,14 +3,21 @@
 namespace BshdevBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-
-
-class HomepageControllerTestControllerTest extends WebTestCase
+class ProjetControllerTestControllerTest extends WebTestCase
 {
 
-    public function testIndex()
+    public function testHomePage()
     {
+        $fixtures = array(
+            'bshdev\BshdevBundle\DataFixtures\ORM\LoadJobData',
+            'bshdev\BshdevBundle\DataFixtures\ORM\LoadPartnerData',
+            'bshdev\BshdevBundle\DataFixtures\ORM\LoadAdminData',
+            'bshdev\BshdevBundle\DataFixtures\ORM\LoadPersonData'
+        );
+
+        $this->fixtures = $
         // Create a new client to browse the application
         $client = static::createClient();
 
