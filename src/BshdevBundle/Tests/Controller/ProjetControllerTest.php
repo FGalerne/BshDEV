@@ -2,8 +2,9 @@
 
 namespace BshdevBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+/*use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;*/
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class ProjetControllerTestControllerTest extends WebTestCase
 {
@@ -17,7 +18,7 @@ class ProjetControllerTestControllerTest extends WebTestCase
             'bshdev\BshdevBundle\DataFixtures\ORM\LoadPersonData'
         );
 
-        $this->fixtures = $
+
         // Create a new client to browse the application
         $client = static::createClient();
 
@@ -64,3 +65,4 @@ class ProjetControllerTestControllerTest extends WebTestCase
 
 
 }
+?>
