@@ -23,7 +23,7 @@
                 <div class="item">
 
                     {% endif %}
-                    <img src="{{ app.request.basepath }}/uploads/{{ partner.imageLogo }}" alt="">
+                    <img src="{{ app.request.basepath }}/uploads/{{ partner.imageLogo }}" alt="{{ partner.alt }}" class="center-block">
                     <div class="slide-content">
                         <h4>{{ partner.title }}</h4>
                         <p>
