@@ -20,12 +20,14 @@ class Person
     }
     public function getWebPath()
     {
-        return null === $this->imageCv ? null : $this->getUploadDir() . '/' . $this->imageCv;
+        return null === $this->image ? null : $this->getUploadDir() . '/' . $this->image;
     }
     public function getAbsolutePath()
     {
-        return null === $this->imageCv ? null : $this->getUploadRootDir() . '/' . $this->imageCv;
+        return null === $this->image ? null : $this->getUploadRootDir() . '/' . $this->image;
     }
+
+    /************************* UPLOAD CV**************************************/
     public $fileCv;
     public function preUploadCv()
     {
@@ -52,6 +54,32 @@ class Person
         }
     }
 
+    /****************************** UPLOAD IDENTITY *****************************************/
+    public $fileIdentity;
+    public function preUploadIdentity()
+    {
+        if (null !== $this->fileIdentity) {
+            // do whatever you want to generate a unique name
+            $this->imageIdentity = uniqid() . '.' . $this->fileIdentity->guessExtension();
+        }
+    }
+    public function uploadIdentity()
+    {
+        if (null === $this->fileIdentity) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->fileIdentity->move($this->getUploadRootDir(), $this->imageIdentity);
+        unset($this->fileIdentity);
+    }
+    public function removeUploadIdentity()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
 
     /************************************************GENERATE CODE*****************************************************/
     /**
@@ -320,5 +348,33 @@ class Person
     public function getJob()
     {
         return $this->job;
+    }
+    /**
+     * @var string
+     */
+    private $imageIdentity;
+
+
+    /**
+     * Set imageIdentity
+     *
+     * @param string $imageIdentity
+     * @return Person
+     */
+    public function setImageIdentity($imageIdentity)
+    {
+        $this->imageIdentity = $imageIdentity;
+
+        return $this;
+    }
+
+    /**
+     * Get imageIdentity
+     *
+     * @return string 
+     */
+    public function getImageIdentity()
+    {
+        return $this->imageIdentity;
     }
 }

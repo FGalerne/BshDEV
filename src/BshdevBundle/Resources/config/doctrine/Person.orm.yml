@@ -33,6 +33,9 @@ BshdevBundle\Entity\Person:
         imageCv:
             type: string
             lenght: 255
+        imageIdentity:
+            type: string
+            lenght: 255
 
 
     manyToOne:
@@ -41,8 +44,8 @@ BshdevBundle\Entity\Person:
             inversedBy: id
 
     lifecycleCallbacks:
-      prePersist: [ preUploadCv ]
-      preUpdate: [ preUploadCv ]
-      postPersist: [ uploadCv ]
-      postUpdate: [ uploadCv ]
-      postRemove: [ removeUploadCv ]
+      prePersist: [ preUploadCv, preUploadIdentity  ]
+      preUpdate: [ preUploadCv, preUploadIdentity ]
+      postPersist: [ uploadCv, uploadIdentity ]
+      postUpdate: [ uploadCv, uploadIdentity ]
+      postRemove: [ removeUploadCv, removeUploadIdentity ]

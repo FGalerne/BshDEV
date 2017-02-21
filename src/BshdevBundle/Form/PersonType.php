@@ -35,7 +35,12 @@ class PersonType extends AbstractType
             ->add('phone', null, array(
                 'label' => 'Télèphone'
             ))
-            ->add('fileCv', 'file', array('required' => false,
+            ->add('fileIdentity', 'file', array(
+                'required' => false,
+                'label'=>'Votre photo'
+            ))
+            ->add('fileCv', 'file', array(
+                'required' => true,
                 'label'=>'Déposez votre CV'
             ))
         ;
