@@ -90,8 +90,8 @@ footer{
 .button{
     background-color: rgba(164, 168, 174, 1);
     color: white;
-    margin-top: 2%;
-    margin-bottom: 5%;
+    margin-top: 1%;
+    margin-bottom: 2%;
 }
 
 .login{
@@ -150,4 +150,21 @@ h2{
 
 .backShadow{
     box-shadow: 5px 2px 20px rgba(158, 32, 100, 0.5);
+}
+
+/**********************************LIST OF CANDIDATURES********************************************/
+.identity{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.identityTxt li{
+     list-style-type: none;
+     font-size: 16px;
+     margin-top: 1%;
+ }
+
+
+
+.identityTxt ul{
+    padding-left:0;
 }
