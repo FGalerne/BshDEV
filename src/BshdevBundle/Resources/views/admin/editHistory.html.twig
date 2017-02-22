@@ -8,9 +8,9 @@
             <h2>Modifier la page "A propos"</h2>
 
             {{ form_start(form) }}
-            {{ form_row(form.history, {'attr': { 'id' : 'history'}}) }}
+            {{ form_row(form.history) }}
             {{ form_row(form.number) }}
-            <a href="{{ path('bshdev_home') }}"><button type="submit" class=" col-xs-offset-1 col-xs-10  col-offset-md-2 col-md-3 button">Annuler</button></a>
+            <a href="{{ path('bshdev_history') }}"><button type="submit" class=" col-xs-offset-1 col-xs-10  col-offset-md-2 col-md-3 button">Annuler</button></a>
 
             <input type="submit" value="Je valide ma modification" class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-3 button" />
             {{ form_end(form) }}

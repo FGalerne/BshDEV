@@ -116,7 +116,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_editHistory');
+            return $this->redirectToRoute('bshdev_history');
         }
 
         return $this->render('BshdevBundle:admin:editHistory.html.twig', array(
