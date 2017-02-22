@@ -1,32 +1,28 @@
 {% extends 'base.html.twig' %}
-{% form_theme form 'BshdevBundle:template:form.html.twig' %}
+{% form_theme form 'BshdevBundle:template:Editform.html.twig' %}
 
 {% block body %}
-    <h1>Admin edit</h1>
+    <h2>Modifier la Homepage</h2>
 
     {{ form_start(form) }}
-    {{ form_row(form.concil, {'attr': {'id':'demo'}}) }}
-    {{ form_row(form.services, {'attr': {'id':'demo'}}) }}
-    {{ form_row(form.infrastruture, {'attr': {'id':'demo'}}) }}
-    <input type="submit" value="Je valide ma modification" class="button" />
-    {{ form_end(form) }}
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-10">
+            {{ form_row(form.concil ) }}
+            {{ form_row(form.services) }}
+            {{ form_row(form.infrastruture) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('bshdev_home') }}">
-                <button type="submit" class="button">Retour à la page</button></a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete" class="button">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <a href="{{ path('bshdev_home') }}"><button type="submit" class=" col-xs-offset-1 col-xs-10  col-offset-md-2 col-md-3 button">Annuler</button></a>
+
+            <input type="submit" value="Je valide ma modification" class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-3 button" />
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
 
     <script type="text/javascript" >
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
         CKEDITOR.replace( 'demo' );
     </script>
-    {{ dump() }}
 {% endblock %}

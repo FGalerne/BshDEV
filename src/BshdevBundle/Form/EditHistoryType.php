@@ -2,6 +2,7 @@
 
 namespace BshdevBundle\Form;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,11 +16,11 @@ class EditHistoryType extends AbstractType
     {
         $builder
             ->add('history', CKEditorType::class, array(
-                'label' => 'Description',
+                'label' => 'Notre Histoire',
 
             ))
             ->add('number', CKEditorType::class, array(
-                'label' => 'Description',
+                'label' => 'Nos chiffres clés',
             ))
         ;
     }

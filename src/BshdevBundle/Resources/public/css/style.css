@@ -51,6 +51,14 @@ nav{
 
 }
 
+.navbar-toggle .icon-bar{
+    background-color: rgba(158, 32, 100, 1);
+}
+
+.navbar-toggle{
+    border-color : rgba(158, 32, 100, 1);
+    margin-right : 35px;
+}
 
 /*******************FOOTER *****************************/
 footer{
@@ -167,4 +175,33 @@ h2{
 
 .identityTxt ul{
     padding-left:0;
+}
+
+/************************************** ADMIN **************************************************/
+.editForm{
+    margin-top: 40px;
+}
+
+
+/*************************************** MEDIA QUERIES *****************************************/
+@media all and (max-width: 768px)
+
+{
+    .carousel-row{
+        margin-top: 100px;
+    }
+    .navbar-brand{
+        padding: 0;
+        margin-left: 15px;
+    }
+
+    /***************************************HOMEPAGE ********************************************/
+
+    .block-homepage{
+        margin-top: 20px;
+    }
+
+    .button{
+        margin-top: 30px;
+    }
 }

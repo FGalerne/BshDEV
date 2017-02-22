@@ -16,13 +16,13 @@ class EditHomepageType extends AbstractType
     {
         $builder
             ->add('concil', CKEditorType::class, array(
-                'label' => 'Description',
+                'label' => 'Conseil',
                 ))
             ->add('services', CKEditorType::class, array(
-                'label' => 'Description',
+                'label' => 'Services Numériques',
                 ))
             ->add('infrastruture', CKEditorType::class, array(
-                'label' => 'description',
+                'label' => 'Infrastuctures',
                 ))
         ;
     }
