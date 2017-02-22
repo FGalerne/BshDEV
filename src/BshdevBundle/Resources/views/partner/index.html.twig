@@ -27,24 +27,24 @@
         </section>
 
         <!-- ---------------------------------MODAL FOR DELETE ---------------------------------------------------- -->
-
-        <div class="modal fade" id="delete">
-            <div class="modal-dialog">
+        <div class="modal fade " id="delete" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Suppression de l'offre d'emploi title</h4>
+                        <h4 class="modal-title">Suppression d'un partenaire</h4>
                     </div>
                     <div class="modal-body">
-                        Etes vous sur de vouloir supprimer cette offre
+                        Etes-vous sur de vouloir supprimer ce partenaire
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                         <a href="{{ path('partner_delete', {'id': partner.id}) }}"><button type="button" class="btn btn-primary">Oui</button></a>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+                </div>
+            </div>
+        </div>
+
 
     {% endfor %}
 {% endblock %}

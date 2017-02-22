@@ -72,18 +72,18 @@ class PartnerController extends Controller
     public function editAction(Request $request, Partner $partner)
     {
         $deleteForm = $this->createDeleteForm($partner);
-        $editForm = $this->createForm('BshdevBundle\Form\PartnerType', $partner);
-        $editForm->handleRequest($request);
+        $form = $this->createForm('BshdevBundle\Form\PartnerType', $partner);
+        $form->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('partner_edit', array('id' => $partner->getId()));
+            return $this->redirectToRoute('partner_index');
         }
 
         return $this->render('BshdevBundle:partner:edit.html.twig', array(
             'partner' => $partner,
-            'edit_form' => $editForm->createView(),
+            'form' => $form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

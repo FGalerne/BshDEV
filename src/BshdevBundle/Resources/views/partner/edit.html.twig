@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'BshdevBundle:template:form.html.twig' %}
 
 {% block body %}
         <h1 class="title">Je modifie un partenaire</h1>
@@ -11,22 +12,12 @@
                 {{ form_row(form.alt) }}
                 {{ form_row(form.fileLogo, {'attr': {'class': 'border'} }) }}
 
-                <input type="submit" value="Ajouter" class="col-xs-12 button" />
+                <a href="{{ path('partner_index') }}"><button type="submit" class="col-xs-12  col-md-offset-1 col-md-4 button">Annuler</button></a>
 
+                <input type="submit" value="Ajouter" class="col-xs-12 col-md-offset-1 col-md-4 button" />
                 {{ form_end(form) }}
 
             </div>
         </div>
 
-
-    <ul>
-        <li>
-            <a href="{{ path('partner_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}
