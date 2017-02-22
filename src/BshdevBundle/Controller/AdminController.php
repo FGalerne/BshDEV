@@ -78,7 +78,7 @@ class AdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_editContact');
+            return $this->redirectToRoute('bshdev_contact');
         }
 
         return $this->render('BshdevBundle:admin:editContact.html.twig', array(
