@@ -2,17 +2,26 @@
 
 namespace BshdevBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
-
-class User extends BaseUser
+/**
+ * User
+ */
+class User
 {
-    protected $id;
+    /**
+     * @var integer
+     */
+    private $id;
 
-    public function __construct()
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
     {
-        parent::__construct();
-        // your own logic
+        return $this->id;
     }
 }
