@@ -70,7 +70,7 @@ class JobController extends Controller
             $em->persist($job);
             $em->flush($job);
 
-            return $this->redirectToRoute('job_show', array('id' => $job->getId()));
+            return $this->redirectToRoute('job_list', array('id' => $job->getId()));
         }
 
         return $this->render('BshdevBundle:job:new.html.twig', array(
@@ -79,19 +79,6 @@ class JobController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a job entity.
-     *
-     */
-    public function showAction(Job $job)
-    {
-        /*$deleteForm = $this->createDeleteForm($job);*/
-
-        return $this->render('BshdevBundle:job:show.html.twig', array(
-            'job' => $job,
-            /*'delete_form' => $deleteForm->createView(),*/
-        ));
-    }
 
     /**
      * Displays a form to edit an existing job entity.
@@ -116,37 +103,5 @@ class JobController extends Controller
         ));
     }
 
-    /**
-     * Deletes a job entity.
-     *
-     */
-   /* public function deleteAction(Request $request, Job $job)
-    {
-        $form = $this->createDeleteForm($job);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($job);
-            $em->flush($job);
-        }
-
-        return $this->redirectToRoute('job_index');
-    }*/
-
-    /**
-     * Creates a form to delete a job entity.
-     *
-     * @param Job $job The job entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    /*private function createDeleteForm(Job $job)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('job_delete', array('id' => $job->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }*/
 }

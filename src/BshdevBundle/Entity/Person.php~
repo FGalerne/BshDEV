@@ -377,4 +377,33 @@ class Person
     {
         return $this->imageIdentity;
     }
+    /**
+     * @var string
+     */
+    private $language;
+
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     *
+     * @return Person
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
 }

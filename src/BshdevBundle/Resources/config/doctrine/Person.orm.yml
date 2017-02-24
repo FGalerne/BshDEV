@@ -33,6 +33,7 @@ BshdevBundle\Entity\Person:
         language:
             type: string
             length: 255
+            nullable: true
         imageCv:
             type: string
             lenght: 255

@@ -34,12 +34,16 @@ security:
                 # if you are using Symfony < 2.8, use the following config instead:
                 # csrf_provider: form.csrf_provider
 
+                # Route aprés avoir cliqué sur connexion
+                default_target_path: /person/
+
             logout:       true
             anonymous:    true
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/person/, role: ROLE_ADMIN }
+        - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/job/new, role: ROLE_ADMIN }
         - { path: ^/job/list, role: ROLE_ADMIN }
         - { path: ^/partner, role: ROLE_ADMIN }

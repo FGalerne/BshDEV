@@ -1,17 +1,3 @@
-admin_index:
-    path:     /
-    defaults: { _controller: "BshdevBundle:Admin:index" }
-    methods:  GET
-
-admin_show:
-    path:     /{id}/show
-    defaults: { _controller: "BshdevBundle:Admin:show" }
-    methods:  GET
-
-admin_new:
-    path:     /new
-    defaults: { _controller: "BshdevBundle:Admin:new" }
-    methods:  [GET, POST]
 
 admin_editContact:
     path:     /{id}/Contact

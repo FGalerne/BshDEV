@@ -42,7 +42,7 @@ class PartnerController extends Controller
             $em->persist($partner);
             $em->flush($partner);
 
-            return $this->redirectToRoute('partner_show', array('id' => $partner->getId()));
+            return $this->redirectToRoute('partner_new', array('id' => $partner->getId()));
         }
 
         return $this->render('BshdevBundle:partner:new.html.twig', array(
@@ -51,19 +51,7 @@ class PartnerController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a partner entity.
-     *
-     */
-    public function showAction(Partner $partner)
-    {
-        $deleteForm = $this->createDeleteForm($partner);
 
-        return $this->render('BshdevBundle:partner:show.html.twig', array(
-            'partner' => $partner,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
 
     /**
      * Displays a form to edit an existing partner entity.

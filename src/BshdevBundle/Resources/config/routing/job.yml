@@ -3,11 +3,6 @@ job_index:
     defaults: { _controller: "BshdevBundle:Job:index" }
     methods:  GET
 
-job_show:
-    path:     /{id}/show
-    defaults: { _controller: "BshdevBundle:Job:show" }
-    methods:  GET
-
 job_new:
     path:     /new
     defaults: { _controller: "BshdevBundle:Job:new" }

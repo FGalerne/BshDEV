@@ -102,10 +102,20 @@ class DefaultControllerTest extends WebTestCase
 
     public function testLogin(){
 
-        $client = static::createClient(array(), array(
-            'PHP_AUTH_USER' => 'admin',
-            'PHP_AUTH_PW' => '123'
-        ));
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/login');
+
+        $this->assertTrue($crawler->filter('form input[name="_username"]')->count() == 1);
+        $this->assertTrue($crawler->filter('form input[name="_password"]')->count() == 1);
+        // Sélection basée sur la valeur, l'id ou le nom des boutons
+        $form = $crawler->selectButton('Connexion')->form();
+        $form['_username'] = 'admin';
+        $form['_password'] = '123';
+        $crawler = $client->submit($form);
+        // Il faut suivre la redirection
+        $this->assertEquals('FOS\UserBundle\Controller\SecurityController::checkAction', $client->getRequest()->attributes->get('_controller'));
+        $this->assertTrue(200 === $client->getResponse()->getStatusCode());
+
 
 
 
