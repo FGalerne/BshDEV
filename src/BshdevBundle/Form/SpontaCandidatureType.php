@@ -3,6 +3,7 @@
 namespace BshdevBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -38,11 +39,11 @@ class SpontaCandidatureType extends AbstractType
             ->add('language', null, array(
                 'label' => 'Langage de prédilection'
             ))
-            ->add('fileIdentity', 'file', array(
+            ->add('fileIdentity', FileType::class, array(
                 'required' => false,
                 'label'=>'Votre photo'
             ))
-            ->add('fileCv', 'file', array(
+            ->add('fileCv', FileType::class, array(
                 'required' => true,
                 'label'=>'Déposez votre CV'
             ))
