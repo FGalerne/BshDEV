@@ -37,7 +37,7 @@ class PersonController extends Controller
     public function candidatureAction(Request $request, Job $job)
     {
         $person = new Person();
-        $form = $this->createForm('BshdevBundle\Form\PersonType', $person);
+        $form = $this->createForm('BshdevBundle\Form\CandidatureType', $person);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -46,7 +46,7 @@ class PersonController extends Controller
             $em->persist($person);
             $em->flush($person);
 
-            return $this->redirectToRoute('person_show', array('id' => $person->getId()));
+            return $this->redirectToRoute('person_candidature');
         }
 
         return $this->render('BshdevBundle:person:candidature.html.twig', array(
@@ -58,7 +58,7 @@ class PersonController extends Controller
     public function spontaCandidatureAction(Request $request)
     {
         $person = new Person();
-        $form = $this->createForm('BshdevBundle\Form\PersonType', $person);
+        $form = $this->createForm('BshdevBundle\Form\SpontaCandidatureType', $person);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -66,7 +66,7 @@ class PersonController extends Controller
             $em->persist($person);
             $em->flush($person);
 
-            return $this->redirectToRoute('person_show', array('id' => $person->getId()));
+            return $this->redirectToRoute('person_spontaCandidature');
         }
 
         return $this->render('BshdevBundle:person:spontaCandidature.html.twig', array(

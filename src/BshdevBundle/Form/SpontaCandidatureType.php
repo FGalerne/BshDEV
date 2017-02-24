@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PersonType extends AbstractType
+class SpontaCandidatureType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -34,6 +34,9 @@ class PersonType extends AbstractType
             ))
             ->add('phone', null, array(
                 'label' => 'Télèphone'
+            ))
+            ->add('language', null, array(
+                'label' => 'Langage de prédilection'
             ))
             ->add('fileIdentity', 'file', array(
                 'required' => false,

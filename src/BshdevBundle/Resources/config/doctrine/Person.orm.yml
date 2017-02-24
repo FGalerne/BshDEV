@@ -30,6 +30,9 @@ BshdevBundle\Entity\Person:
         phone:
             type: string
             length: 255
+        language:
+            type: string
+            length: 255
         imageCv:
             type: string
             lenght: 255
