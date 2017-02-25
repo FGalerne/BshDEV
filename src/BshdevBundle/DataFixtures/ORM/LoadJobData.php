@@ -1,11 +1,12 @@
 <?php
 namespace BshdevBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use BshdevBundle\Entity\Job;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
-class LoadJobData implements FixtureInterface
+class LoadJobData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -78,5 +79,10 @@ Vous êtes rigoureux, organisé,  aimez le travail en groupe et avez de fortes a
 
         $manager->persist($job3);
         $manager->flush();
+    }
+
+    public function getOrder()
+    {
+        return 3;
     }
 }

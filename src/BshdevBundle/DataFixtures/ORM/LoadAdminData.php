@@ -1,12 +1,13 @@
 <?php
 namespace BshdevBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use BshdevBundle\Entity\Admin;
-use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
-class LoadAdminData implements FixtureInterface
+class LoadAdminData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -30,5 +31,13 @@ class LoadAdminData implements FixtureInterface
         $admin->setPhone('0237355751');
         $admin->setCellphone('0650624574');
 
+        $manager->persist($admin);
+        $manager->flush();
+
+    }
+
+    public function getOrder()
+    {
+        return 2;
     }
 }

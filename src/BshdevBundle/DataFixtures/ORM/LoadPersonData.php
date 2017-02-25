@@ -1,12 +1,15 @@
 <?php
 namespace BshdevBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use BshdevBundle\Entity\Person;
 use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
-class LoadPersonData implements FixtureInterface
+
+class LoadPersonData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -19,8 +22,18 @@ class LoadPersonData implements FixtureInterface
         $user1->setTown('La loupe');
         $user1->setEmail('mail@mail.fr');
         // addition a cv
-        $cv = new File('src/BshdevBundle/Resources/public/img/bouygues-telecom.jpg');
+        $user1->setImageCv('CV');
+        $cv = new File('src/BshdevBundle/Resources/public/img/CV.jpg');
         $user1->fileLogo = $cv;
 
+        $manager->persist($user1);
+        $manager->flush();
+
+
+    }
+
+    public function getOrder()
+    {
+        return 4;
     }
 }

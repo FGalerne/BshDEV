@@ -37,9 +37,11 @@ BshdevBundle\Entity\Person:
         imageCv:
             type: string
             lenght: 255
+            nullable: true
         imageIdentity:
             type: string
             lenght: 255
+            nullable: true
 
 
     manyToOne:
