@@ -4,6 +4,7 @@ namespace BshdevBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Form\Test\TypeTestCase;
 
 
 class PersonControllerTest extends WebTestCase
@@ -23,33 +24,40 @@ class PersonControllerTest extends WebTestCase
 
         //upload
         $photo = new UploadedFile(
-            'bshdev\src\BshdevBundle\Tests\img\Photo.jpg',
+            'src/BshdevBundle/Tests/img/Photo.jpg',
             'Photo.jpg',
             'image/jpg',
             9988
         );
         $cv = new UploadedFile(
-            'BshdevBundle/Tests/img/CV.jpg',
+            'src/BshdevBundle/Tests/img/CV.jpg',
             'CV.jpg',
             'image/jpg',
             9988
         );
 
-     /*   // validation du formulaire
+        // validation du formulaire
 
         $client = static::createClient();
 
-        $form =$crawler->selectButton('Je Postule !')->form();
-        $form['spontaCandidatureForm[lastname]'] = 'GALERNE';
-        $form['spontaCandidatureForm[firstname]'] = 'Florian';
-        $form['spontaCandidatureForm[address]'] = '10 rue de la poele';
-        $form['spontaCandidatureForm[cp]'] = '14023';
-        $form['spontaCandidatureForm[town]'] = 'Caen';
-        $form['spontaCandidatureForm[email]'] = 'mail@mail.fr';
-        $form['spontaCandidatureForm[phone]'] = '0123121212';
-        $form['spontaCandidatureForm[language]'] = 'PHP, JAVA';
-        $form['spontaCandidatureForm[fileIdentity]'] = $photo;
-        $form['spontaCandidatureForm[fileCv]'] = $cv;*/
+        $buttonPostule =$crawler->selectButton('Je Postule !');
+        $form = $buttonPostule->form(array(
+            'bshdevbundle_spontaCandidature[lastname]' => 'GALERNE',
+            'bshdevbundle_spontaCandidature[firstname]' => 'Florian',
+            'bshdevbundle_spontaCandidature[address]' => '18 place de l\'église',
+            'bshdevbundle_spontaCandidature[cp]' => '75001',
+            'bshdevbundle_spontaCandidature[town]' => 'Paris',
+            'bshdevbundle_spontaCandidature[phone]' => '0137353636',
+            'bshdevbundle_spontaCandidature[email]' => 'mail@mail.fr',
+            'bshdevbundle_spontaCandidature[language]' => 'PHP, JAVA',
+            'bshdevbundle_spontaCandidature[fileIdentity]' => $photo,
+            'bshdevbundle_spontaCandidature[fileCv]' => $cv
+
+        ));
+
+        $client->submit($form);
+
+
 
 
 
