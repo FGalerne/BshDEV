@@ -40,7 +40,7 @@ class EditHistoryType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'bshdevbundle_editContact';
+        return 'bshdevbundle_editHistory';
     }
 
 

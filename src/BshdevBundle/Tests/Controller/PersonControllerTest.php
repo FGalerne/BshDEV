@@ -26,7 +26,7 @@ class PersonControllerTest extends WebTestCase
             'bshdevbundle_spontaCandidature[email]' => 'mail@mail.fr',
             'bshdevbundle_spontaCandidature[language]' => 'PHP, JAVA',
             'bshdevbundle_spontaCandidature[fileIdentity]' => $photo,
-            'bshdevbundle_spontaCandidature[fileCv]' => $cv
+            'bshdevbundle_spontaCandidature[fileCv]' => $cv;
         ));
         $client->submit($form);
         $crawler = $client->followRedirect();

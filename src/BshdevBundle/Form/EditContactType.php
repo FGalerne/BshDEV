@@ -53,7 +53,7 @@ class EditContactType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'bshdevbundle_editHistory';
+        return 'bshdevbundle_editContactType';
     }
 
 

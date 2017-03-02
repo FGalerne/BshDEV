@@ -63,7 +63,7 @@ class CandidatureType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'bshdevbundle_person';
+        return 'bshdevbundle_candidature';
     }
 
 

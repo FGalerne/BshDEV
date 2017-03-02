@@ -1,6 +1,8 @@
 <?php
 namespace BshdevBundle\Tests\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
 class DefaultControllerTest extends WebTestCase
 {
     public function testHomePage()

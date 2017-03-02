@@ -66,7 +66,7 @@ class SpontaCandidatureType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'bshdevbundle_person';
+        return 'bshdevbundle_spontaCandidature';
     }
 
 
