@@ -5,6 +5,7 @@ namespace BshdevBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class PartnerType extends AbstractType
 {
@@ -21,7 +22,7 @@ class PartnerType extends AbstractType
             ->add('alt', null, array(
                 'label' => 'Légende de l\'image',
             ))
-            ->add('fileLogo', 'file', array('required' => false,
+            ->add('fileLogo', FileType::class, array('required' => false,
                 'label'=>'Ajouter un logo',
             ))
         ;

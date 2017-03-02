@@ -3,8 +3,10 @@
 namespace BshdevBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class CandidatureType extends AbstractType
 {
@@ -35,11 +37,11 @@ class CandidatureType extends AbstractType
             ->add('phone', null, array(
                 'label' => 'Télèphone'
             ))
-            ->add('fileIdentity', 'file', array(
+            ->add('fileIdentity', FileType::class, array(
                 'required' => false,
                 'label'=>'Votre photo'
             ))
-            ->add('fileCv', 'file', array(
+            ->add('fileCv', FileType::class, array(
                 'required' => true,
                 'label'=>'Déposez votre CV'
             ))
