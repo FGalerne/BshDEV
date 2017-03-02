@@ -100,18 +100,6 @@ class DefaultControllerTest extends WebTestCase
 
     }
 
-    public function testLogin(){
-
-        $client = static::createClient(array(), array(
-            'PHP_AUTH_USER' => 'admin',
-            'PHP_AUTH_PW' => '123'
-        ));
-
-
-
-    }
-
-
 }
 
 
