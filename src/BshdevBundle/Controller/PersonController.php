@@ -17,14 +17,17 @@ class PersonController extends Controller
      * Lists all person entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Job $job)
     {
+
         $em = $this->getDoctrine()->getManager();
 
         $persons = $em->getRepository('BshdevBundle:Person')->findAll();
 
+
         return $this->render('BshdevBundle:Person:index.html.twig', array(
             'persons' => $persons,
+            'job' => $job
 
         ));
     }

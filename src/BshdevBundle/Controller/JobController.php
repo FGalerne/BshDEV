@@ -103,5 +103,19 @@ class JobController extends Controller
         ));
     }
 
+    /**
+     * Finds and displays a job entity.
+     *
+     */
+    public function showAction(Job $job)
+    {
+        /*$deleteForm = $this->createDeleteForm($job);*/
+        return $this->render('BshdevBundle:job:show.html.twig', array(
+            'job' => $job,
+            /*'delete_form' => $deleteForm->createView(),*/
+        ));
+    }
+
+
 
 }

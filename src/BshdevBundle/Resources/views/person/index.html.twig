@@ -2,108 +2,71 @@
 
 {% block body %}
 
-<section class="row">
-    <h2>Candidature spontanée</h2>
-    {% for person in persons %}
-        {% if person.job == NULL %}
-            <div class="col-xs-offset-1 col-xs-10  backWhite">
-                <div class="row">
-                    <div class="col-xs-12 col-lg-3 identity">
-                        {% if  person.imageIdentity != NULL%}
-                        <img src="{{ app.request.basepath }}/uploads/{{ person.imageIdentity }}" alt="{{ person.lastname }} {{ person.firstname }}" class=" img-responsive col-xs-offset-3 col-xs-6 col-lg-offset-3 col-lg-6">
-                        {% else %}
-                        <img src="{{ asset('bundles/bshdev/img/no_photo.jpg') }}" alt="{{ person.lastname }} {{ person.firstname }}" class=" img-responsive col-xs-offset-3 col-xs-6 col-lg-offset-3 col-lg-6">
-                        {% endif %}
-                    </div>
-                    <div class="col-xs-12 col-lg-8 identityTxt">
-                        <ul>
-                            <li class="col-lg-3"><b>Nom :</b> {{ person.lastname }}</li>
-                            <li class="col-lg-3"><b>Prénom :</b> {{ person.firstname }}</li>
-                            <li class="col-lg-12"><b>Adresse:</b> {{ person.address }} {{ person.cp }} {{ person.town }}</li>
-                            <li class="col-lg-12"><b>Téléphone:</b> {{ person.phone }}</li>
-                            <li class="col-lg-12"><b>Email:</b> {{ person.email }}</li>
-                            <li class="col-lg-12"><b>Langage de prédilection:</b> {{ person.language }}</li>
-                        </ul>
-                    </div>
+    <section class="row">
+        <h2>Candidature spontanée</h2>
+        {% for person in persons %}
+            {% if person.job == NULL %}
+                <div class="col-xs-offset-1 col-xs-10  backWhite">
                     <div class="row">
-                        <div class="col-xs-12"> <a href="{{ app.request.basepath }}/uploads/{{ person.imageCv }}" download="{{ person.imageCv }}">
-                                <button type="submit" class="col-xs-offset-1 col-xs-10 button">Télécharger le CV</button></a>
+                        <div class="col-xs-12 col-lg-3 identity">
+                            {% if  person.imageIdentity != NULL%}
+                                <img src="{{ app.request.basepath }}/uploads/{{ person.imageIdentity }}" alt="{{ person.lastname }} {{ person.firstname }}" class=" img-responsive col-xs-offset-3 col-xs-6 col-lg-offset-3 col-lg-6">
+                            {% else %}
+                                <img src="{{ asset('bundles/bshdev/img/no_photo.jpg') }}" alt="{{ person.lastname }} {{ person.firstname }}" class=" img-responsive col-xs-offset-3 col-xs-6 col-lg-offset-3 col-lg-6">
+                            {% endif %}
+                        </div>
+                        <div class="col-xs-12 col-lg-8 identityTxt">
+                            <ul>
+                                <li class="col-lg-3"><b>Nom :</b> {{ person.lastname }}</li>
+                                <li class="col-lg-3"><b>Prénom :</b> {{ person.firstname }}</li>
+                                <li class="col-lg-12"><b>Adresse:</b> {{ person.address }} {{ person.cp }} {{ person.town }}</li>
+                                <li class="col-lg-12"><b>Téléphone:</b> {{ person.phone }}</li>
+                                <li class="col-lg-12"><b>Email:</b> {{ person.email }}</li>
+                                <li class="col-lg-12"><b>Langage de prédilection:</b> {{ person.language }}</li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"> <a href="{{ app.request.basepath }}/uploads/{{ person.imageCv }}" download="{{ person.imageCv }}">
+                                    <button type="submit" class="col-xs-offset-1 col-xs-10 button">Télécharger le CV</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            {% endif %}
+        {% endfor %}
+    </section>
 
-            </div>
-
-        {% endif %}
-    {% endfor %}
-</section>
-
-<section class="row">
-    <h2>Candidature</h2>
-    {% for person in persons %}
-        {% if person.job != NULL %}
-            <div class="col-xs-offset-1 col-xs-10  backWhite">
-                <div class="row">
-                    <div class="col-xs-12 col-lg-3 identity">
-                        {% if  person.imageIdentity != NULL%}
-                            <img src="{{ app.request.basepath }}/uploads/{{ person.imageIdentity }}" alt="{{ person.lastname }} {{ person.firstname }}" class=" img-responsive col-xs-offset-3 col-xs-6 col-lg-offset-3 col-lg-6">
-                        {% else %}
-                            <img src="{{ asset('bundles/bshdev/img/no_photo.jpg') }}" alt="{{ person.lastname }} {{ person.firstname }}" class=" img-responsive col-xs-offset-3 col-xs-6 col-lg-offset-3 col-lg-6">
-                        {% endif %}
-                    </div>
-                    <div class="col-xs-12 col-lg-8 identityTxt">
-                        <ul>
-                            <li class="col-lg-3"><b>Nom :</b> {{ person.lastname }}</li>
-                            <li class="col-lg-3"><b>Prénom :</b> {{ person.firstname }}</li>
-                            <li class="col-lg-12"><b>Adresse:</b> {{ person.address }} {{ person.cp }} {{ person.town }}</li>
-                            <li class="col-lg-12"><b>Téléphone:</b> {{ person.phone }}</li>
-                            <li class="col-lg-12"><b>Email:</b> {{ person.email }}</li>
-                        </ul>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12"> <a href="{{ app.request.basepath }}/uploads/{{ person.imageCv }}" download="{{ person.imageCv }}">
-                                <button type="submit" class="col-xs-offset-1 col-xs-10 col-lg-offset-1 col-lg-4 button">Télécharger le CV</button></a>
-                            <button type="submit" class="col-xs-offset-1 col-xs-10 col-lg-offset-2 col-lg-4 button">Voir l'offre</button></a>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        {% endif %}
-    {% endfor %}
-
-    {#<div class="row offer">
-        <h2>Candidature suite à une offre d'emploi</h2>
+    <section class="row">
+        <h2>Candidature</h2>
         {% for person in persons %}
             {% if person.job != NULL %}
-                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite">
-
-                    <div class="row ">
-                        <table>
-                            <tr>
-                                <th class=" col-xs-2">Nom</th>
-                                <th class=" col-xs-2">Prénom</th>
-                                <th class="col-xs-3">Adresse postal</th>
-                                <th class=" col-xs-1">Téléphone</th>
-                                <th class=" col-xs-3">Email</th>
-                            </tr>
-                            <tr>
-                                <td class="col-xs-2">{{ person.lastname }}</td>
-                                <td class="col-xs-2">{{ person.firstname }}</td>
-                                <td class="col-xs-2">{{ person.address }} {{ person.cp }} {{ person.town }}</td>
-                                <td class="col-xs-1">{{ person.phone }}</td>
-                                <td class="col-xs-3">{{ person.email }}</td>
-                                <td class="col-xs-1"> <a href="{{ app.request.basepath }}/uploads/{{ person.imageCv }}" download="{{ person.imageCv }}">
-                                        <button type="submit">Télécharger le CV</button></a>
-                                </td>
-                            </tr>
-                        </table>
+                <div class="col-xs-offset-1 col-xs-10  backWhite">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-3 identity">
+                            {% if  person.imageIdentity != NULL%}
+                                <img src="{{ app.request.basepath }}/uploads/{{ person.imageIdentity }}" alt="{{ person.lastname }} {{ person.firstname }}" class=" img-responsive col-xs-offset-3 col-xs-6 col-lg-offset-3 col-lg-6">
+                            {% else %}
+                                <img src="{{ asset('bundles/bshdev/img/no_photo.jpg') }}" alt="{{ person.lastname }} {{ person.firstname }}" class=" img-responsive col-xs-offset-3 col-xs-6 col-lg-offset-3 col-lg-6">
+                            {% endif %}
+                        </div>
+                        <div class="col-xs-12 col-lg-8 identityTxt">
+                            <ul>
+                                <li class="col-lg-3"><b>Nom :</b> {{ person.lastname }}</li>
+                                <li class="col-lg-3"><b>Prénom :</b> {{ person.firstname }}</li>
+                                <li class="col-lg-12"><b>Adresse:</b> {{ person.address }} {{ person.cp }} {{ person.town }}</li>
+                                <li class="col-lg-12"><b>Téléphone:</b> {{ person.phone }}</li>
+                                <li class="col-lg-12"><b>Email:</b> {{ person.email }}</li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12"> <a href="{{ app.request.basepath }}/uploads/{{ person.imageCv }}" download="{{ person.imageCv }}">
+                                    <button type="submit" class="col-xs-offset-1 col-xs-10 col-lg-offset-1 col-lg-4 button">Télécharger le CV</button></a>
+                                <a href="{{ path('job_show', {'id': job.id}) }}"> <button type="submit" class="col-xs-offset-1 col-xs-10 col-lg-offset-2 col-lg-4 button">Voir l'offre</button></a>
+                            </div>
+                        </div>
                     </div>
-                </section>#}
-    {#            {% endif %}
-            {% endfor %}
-        </div>
-        }#}
-    {% endblock %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+{% endblock %}
