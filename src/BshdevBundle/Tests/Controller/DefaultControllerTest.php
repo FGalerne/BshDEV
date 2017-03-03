@@ -2,7 +2,7 @@
 
 namespace BshdevBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 
 class DefaultControllerTest extends WebTestCase
@@ -99,6 +99,8 @@ class DefaultControllerTest extends WebTestCase
 
 
     }
+
+
 
 }
 

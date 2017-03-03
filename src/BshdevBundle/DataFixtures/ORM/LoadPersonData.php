@@ -21,6 +21,11 @@ class LoadPersonData extends AbstractFixture implements OrderedFixtureInterface
         $user1->setImageCv('CV');
         $cv = new File('src/BshdevBundle/Resources/public/img/CV.jpg');
         $user1->fileLogo = $cv;
+
+        //addition an identity picture
+        $user1->setImageIdentity('Photo');
+        $photo = new File('src/BshdevBundle/Resources/public/img/Photo.jpg');
+        $user1->fileLogo = $photo;
         $manager->persist($user1);
         $manager->flush();
     }
